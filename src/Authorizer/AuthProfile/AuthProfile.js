@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import AuthSidebar from '../AuthSidebar/AuthSidebar';
 
 function AuthProfile() {
   return (
-    <div>AuthProfile</div>
+    <div>
+        <AuthSidebar />
+    </div>
   )
 }
 
