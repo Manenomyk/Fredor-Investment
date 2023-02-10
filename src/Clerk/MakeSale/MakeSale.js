@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import ClerkSidebar from '../ClerkSidebar/ClerkSidebar';
 
 function MakeSale() {
   return (
-    <div>MakeSale</div>
+    <div>
+      <ClerkSidebar />
+    </div>
   )
 }
 
