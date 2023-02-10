@@ -1,36 +1,37 @@
 import React from 'react';
-import { AiOutlineUser } from "react-icons/ai";
-import { FaHandHoldingUsd } from "react-icons/fa";
+import { IoMdContact } from "react-icons/io";
+import { FaListOl } from "react-icons/fa";
+import { GiTakeMyMoney } from "react-icons/gi";
 import { FaFileInvoice } from "react-icons/fa";
-import { MdDashboardCustomize } from "react-icons/md";
-import { FcPieChart } from "react-icons/fc";
+import { AiFillHome } from "react-icons/ai";
+import { FaTruck } from "react-icons/fa";
 
 
 export const AuthScontent = [
     {
-        icon:<MdDashboardCustomize style={{fontSize:"25px", color:"white" }} />,
+        icon:<AiFillHome style={{fontSize:"25px", color:"white" }} />,
         title: "Home",
         link: "./AuthDashboard",
         
     },
     {
-        icon:<AiOutlineUser style={{fontSize:"25px"}}/>,
+        icon:<IoMdContact style={{fontSize:"25px"}}/>,
         title: "Profile",
         link: "./AuthProfile"
     },
     {
-        icon:<AiOutlineUser style={{fontSize:"25px"}}/>,
+        icon:<FaListOl style={{fontSize:"25px"}}/>,
         title: "Item List",
         link: "./ItemList"
     },
 
     {
-        icon:<FaHandHoldingUsd style={{fontSize:"25px", color:"green"}} />,
+        icon:<GiTakeMyMoney style={{fontSize:"25px", color:"green"}} />,
         title: "Transactions",
         link: "./Transactions"
     },
     {
-        icon:<AiOutlineUser style={{fontSize:"25px"}}/>,
+        icon:<FaTruck style={{fontSize:"25px"}}/>,
         title: "Customer List",
         link: "./AuthCustomerList"
     },
