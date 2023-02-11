@@ -14,6 +14,8 @@ import AdminProfile from './Admin/AdminProfile/AdminProfile';
 import AdminReports from './Admin/AdminReports/AdminReports';
 import AdminSidebar from './Admin/AdminSidebar/AdminSidebar';
 import AdminUsers from './Admin/AdminUsers/AdminUsers';
+import AdminCustomerList from './Admin/AdminCustomerList/AdminCustomerList';
+import AdminItemList from './Admin/AdminItemList/AdminItemList';
 // import AdminTransactions from './Admin/AdminTransactions/AdminTransactions';
 
 
@@ -55,7 +57,8 @@ function App() {
           <Route exact path='/adminreports' element={<AdminReports/>}></Route>
           <Route exact path='/adminsidebar' element={<AdminSidebar/>}></Route>
           <Route exact path='/adminusers' element={<AdminUsers/>}></Route>
-          {/* <Route exact path='/transaction' element={<Transactions/>}></Route> */}
+          <Route exact path='/admincustomerlist' element={<AdminCustomerList/>}></Route>
+          <Route exact path='/adminitemlist' element={<AdminItemList/>} ></Route>
 
 
 

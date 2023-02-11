@@ -23,7 +23,7 @@ export const AdminScontent = [
     {
         icon:<FaListOl style={{fontSize:"25px"}}/>,
         title: "Item List",
-        link: "./ItemList"
+        link: "./AdminItemList"
     },
     {
         icon:<FaUserCheck style={{fontSize:"25px", color: 'pink'}}/>,
@@ -38,7 +38,7 @@ export const AdminScontent = [
     {
         icon:<FaTruck style={{fontSize:"25px"}}/>,
         title: "Customer List",
-        link: "./CustomerList"
+        link: "./AdminCustomerList"
     },
     
     {

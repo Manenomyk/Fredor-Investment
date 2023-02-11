@@ -1,18 +1,17 @@
 import React from 'react';
-import ClerkSidebar from '../ClerkSidebar/ClerkSidebar';
-import './ItemList.css';
-import * as list from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './ItemList.css';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
+import './AdminItemList.css';
+import * as adminlist from 'react-bootstrap';
 
-function ItemList() {
+function AdminItemList() {
   return (
     <div>
-      <ClerkSidebar />
+        <AdminSidebar />
 
-      <list.Container>
-        <list.Row>
-          <list.Col className='mt-3' lg={12}>
+
+        <adminlist.Container>
+        <adminlist.Row>
+          <adminlist.Col className='mt-3' lg={12}>
           <table className="table">
               <thead className="tablehead">
                 <tr>
@@ -43,12 +42,11 @@ function ItemList() {
                 </tr>
               </tbody>
             </table>
-          </list.Col>
-        </list.Row>
-      </list.Container>
-      
+          </adminlist.Col>
+        </adminlist.Row>
+      </adminlist.Container>
     </div>
   )
 }
 
-export default ItemList
+export default AdminItemList

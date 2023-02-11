@@ -22,7 +22,7 @@ export const AuthScontent = [
     {
         icon:<FaListOl style={{fontSize:"25px"}}/>,
         title: "Item List",
-        link: "./ItemList"
+        link: "./AuthItemList"
     },
 
     {
