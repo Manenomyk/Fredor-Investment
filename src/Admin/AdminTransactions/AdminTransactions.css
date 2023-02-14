@@ -1,0 +1,7 @@
+.transearch{
+    width: 30vw;
+}
+.inputsearch{
+    display: flex;
+    justify-content: end;
+}

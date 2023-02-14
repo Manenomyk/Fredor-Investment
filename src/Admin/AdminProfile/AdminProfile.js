@@ -51,7 +51,7 @@ function AdminProfile() {
                       
 
                       <div>
-                          <button className='btn btn-danger' id='updatebtn'>Update</button>
+                          <button className='btn btn-success' id='updatebtn'>Update</button>
                                   
                       </div>
                       <a href="" id='uplink'>Update password?</a>

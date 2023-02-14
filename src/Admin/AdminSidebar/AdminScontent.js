@@ -33,7 +33,7 @@ export const AdminScontent = [
     {
         icon:<GiTakeMyMoney style={{fontSize:"25px", color:"yellow"}} />,
         title: "Transactions",
-        link: "./Transactions"
+        link: "./AdminTransactions"
     },
     {
         icon:<FaTruck style={{fontSize:"25px"}}/>,
