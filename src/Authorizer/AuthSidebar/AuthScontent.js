@@ -28,7 +28,7 @@ export const AuthScontent = [
     {
         icon:<GiTakeMyMoney style={{fontSize:"25px", color:"green"}} />,
         title: "Transactions",
-        link: "./Transactions"
+        link: "./AuthTransaction"
     },
     {
         icon:<FaTruck style={{fontSize:"25px"}}/>,

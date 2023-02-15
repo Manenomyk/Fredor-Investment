@@ -30,7 +30,8 @@ import AuthReport from './Authorizer/AuthReport/AuthReport';
 import AuthSidebar from './Authorizer/AuthSidebar/AuthSidebar';
 import AuthCustomerList from './Authorizer/AuthCustomerList/AuthCustomerList';
 import AuthItemList from './Authorizer/AuthItemList/AuthItemList';
-// import Transactions from './Authorizer/Transactions/Transactions';
+import AuthTransaction from './Authorizer/AuthTransaction/AuthTransaction';
+import AuthAddItem from './Authorizer/AuthItemList/AuthAddItem';
 
 
 
@@ -80,7 +81,8 @@ function App() {
           <Route exact path='/authsidebar' element={<AuthSidebar/>}></Route>
           <Route exact path='/authcustomerlist' element={<AuthCustomerList/>}></Route>
           <Route exact path='/authitemlist' element={<AuthItemList/>}></Route>
-          {/* <Route exact path='/transaction' element={<Transactions/>}></Route> */}
+          <Route exact path='/authtransaction' element={<AuthTransaction/>}></Route>
+          <Route exact path='/authadditem' element={<AuthAddItem />}></Route>
 
 
 

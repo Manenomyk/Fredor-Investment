@@ -2,6 +2,7 @@ import React from 'react';
 import AuthSidebar from '../AuthSidebar/AuthSidebar';
 import './AuthItemList.css';
 import * as authlist from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function AuthItemList() {
   return (
@@ -11,6 +12,7 @@ function AuthItemList() {
         <authlist.Container>
         <authlist.Row>
           <authlist.Col className='mt-3' lg={12}>
+          <Link to={'../AuthAddItem'} className='addcustomer btn btn-primary btn-sm float-end mb-2'>+</Link >
           <table className="table">
               <thead className="tablehead">
                 <tr>
