@@ -1,0 +1,8 @@
+.addin{
+    gap: 2rem;
+}
+.newuserbtn{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
