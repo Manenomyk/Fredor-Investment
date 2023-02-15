@@ -6,6 +6,7 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { FaFileInvoice } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { FaUserCheck } from "react-icons/fa";
+import { SiLogstash } from "react-icons/si";
 
 
 export const AdminScontent = [
@@ -45,6 +46,11 @@ export const AdminScontent = [
         icon:<FaFileInvoice style={{fontSize:"25px", color:"brown"}}/>,
         title: "Reports",
         link: "./AdminReports"
+    },
+    {
+        icon:<SiLogstash style={{fontSize:"25px", color:"lightBlue"}}/>,
+        title: "Logs",
+        link: "./Logs"
     },
     
 ] ;

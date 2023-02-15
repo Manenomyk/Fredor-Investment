@@ -19,6 +19,7 @@ import AdminAddCustomer from './Admin/AdminCustomerList/AdminAddCustomer';
 import AdminItemList from './Admin/AdminItemList/AdminItemList';
 import AdminTransactions from './Admin/AdminTransactions/AdminTransactions';
 import AdminNewUsers from './Admin/AdminUsers/AdminNewUsers';
+import Logs from './Admin/Logs/Logs';
 
 
 //Authorizer
@@ -64,6 +65,7 @@ function App() {
           <Route exact path='/adminaddcustomer' element={<AdminAddCustomer />}></Route>
           <Route exact path='/admintransactions' element={<AdminTransactions />}></Route>
           <Route exact path='/adminnewusers' element={<AdminNewUsers />}></Route>
+          <Route exact path='/logs' element={<Logs />}></Route>
 
 
 
