@@ -6,7 +6,7 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { FaFileInvoice } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
-
+import { GiReturnArrow } from "react-icons/gi";
 
 export const ClerkScontent = [
     {
@@ -29,6 +29,11 @@ export const ClerkScontent = [
         icon:<FcSalesPerformance style={{fontSize:"25px"}}/>,
         title: "Make sale",
         link: "./MakeSale"
+    },
+    {
+        icon:<GiReturnArrow style={{fontSize:"25px", color:"gray"}}/>,
+        title: "Accept returns",
+        link: "./Returns"
     },
 
     {

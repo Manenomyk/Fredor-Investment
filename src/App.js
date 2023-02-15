@@ -44,6 +44,8 @@ import CustomerList from './Clerk/CustomerList/CustomerList';
 import ItemList from './Clerk/ItemList/ItemList';
 import MakeSale from './Clerk/MakeSale/MakeSale';
 import ClerkTransactions from './Clerk/ClerkTransactions/ClerkTransactions';
+import AcceptReturns from './Clerk/AcceptReturns/AcceptReturns';
+import Returns from './Clerk/AcceptReturns/Returns'
 
 function App() {
   return (
@@ -93,6 +95,8 @@ function App() {
           <Route exact path='/customerlist' element={<CustomerList/>}></Route>
           <Route exact path='/itemlist' element={<ItemList/>}></Route>
           <Route exact path='/makesale' element={<MakeSale/>}></Route>
+          <Route exact path='/acceptreturns' element={<AcceptReturns />}></Route>
+          <Route exact path='/returns' element={<Returns />}></Route>
         </Routes>
       </Router>
     </div>
