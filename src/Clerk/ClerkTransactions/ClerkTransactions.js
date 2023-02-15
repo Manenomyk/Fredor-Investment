@@ -13,7 +13,7 @@ function ClerkTransactions() {
             
             <clerktrans.Row>
                 <div className='inputsearch'>
-                    <input type="search" className=' transearch form-control shadow-none mt-3'/>
+                    <input type="search" placeholder='Search...' className=' transearch form-control shadow-none mt-3'/>
                 </div>
                 <clerktrans.Col lg={12} className="mt-2">
                 <table className="table">

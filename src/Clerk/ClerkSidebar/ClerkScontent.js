@@ -46,11 +46,9 @@ export const ClerkScontent = [
         title: "Customer List",
         link: "./CustomerList"
     },
-    
     {
         icon:<FaFileInvoice style={{fontSize:"25px", color:"brown"}}/>,
         title: "Reports",
-        link: "./ClerkReport                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             "
+        link: "./ClerkReport"
     },
-    
 ] ;
