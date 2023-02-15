@@ -43,7 +43,7 @@ import ClerkSidebar from './Clerk/ClerkSidebar/ClerkSidebar';
 import CustomerList from './Clerk/CustomerList/CustomerList';
 import ItemList from './Clerk/ItemList/ItemList';
 import MakeSale from './Clerk/MakeSale/MakeSale';
-import Transactions from './Clerk/Transactions/Transactions';
+import ClerkTransactions from './Clerk/ClerkTransactions/ClerkTransactions';
 
 function App() {
   return (
@@ -89,7 +89,7 @@ function App() {
           <Route exact path='/Clerkprofile' element={<ClerkProfile/>}></Route>
           <Route exact path='/Clerkreport' element={<ClerkReport/>}></Route>
           <Route exact path='/Clerksidebar' element={<ClerkSidebar/>}></Route>
-          <Route exact path='/transactions' element={<Transactions/>}></Route>
+          <Route exact path='/clerktransactions' element={<ClerkTransactions/>}></Route>
           <Route exact path='/customerlist' element={<CustomerList/>}></Route>
           <Route exact path='/itemlist' element={<ItemList/>}></Route>
           <Route exact path='/makesale' element={<MakeSale/>}></Route>

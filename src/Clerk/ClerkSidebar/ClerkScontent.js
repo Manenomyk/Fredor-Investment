@@ -34,7 +34,7 @@ export const ClerkScontent = [
     {
         icon:<GiTakeMyMoney style={{fontSize:"25px", color:"green"}} />,
         title: "Transactions",
-        link: "./Transactions"
+        link: "./ClerkTransactions"
     },
     {
         icon:<FaTruck style={{fontSize:"25px"}}/>,
