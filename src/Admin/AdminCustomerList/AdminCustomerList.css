@@ -1,0 +1,24 @@
+.tablehead{
+    background-color: #6d2c68;
+    color: white;
+}
+
+.addcustomer{
+    font-size: large;
+}
+
+.details1{
+    justify-content: center;
+    gap: 2rem;
+}
+.details2{
+    justify-content: center;
+    gap: 2rem;
+}
+.details3{
+    justify-content: center;
+    gap: 2rem;
+}
+.addcard{
+    margin-top: 5rem;
+}
