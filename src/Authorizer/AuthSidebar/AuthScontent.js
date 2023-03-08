@@ -39,7 +39,7 @@ export const AuthScontent = [
     {
         icon:<FaFileInvoice style={{fontSize:"25px", color:"brown"}}/>,
         title: "Reports",
-        link: "./AuthReport                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             "
+        link: "./AuthReport"
     },
     
 ] ;
