@@ -1,4 +1,55 @@
 .homenav{
     box-Shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     height: 10vh;
+    /* z-index: 1;
+    position: fixed; */
+}
+.section1{
+    width: 100vw;
+    height: 80vh;
+    margin-top: 2rem;
+}
+
+.homeimage{
+    background-image: url('../../Images/wheat.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.details{
+    border: 1px solid transparent;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0b5ed7;
+}
+
+.name{
+    margin-bottom: 2rem;
+}
+
+.content{
+    margin-bottom: 2rem;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.copy{
+    margin-top: 8px;
+    margin-left: 10px;
+}
+.link{
+    text-decoration: none;
+    color: black;
 }
