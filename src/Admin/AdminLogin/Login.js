@@ -4,7 +4,6 @@ import * as log from "react-bootstrap";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
-
 function Login() {
   const navigate = useNavigate();
   const [serverError, setServerError] = useState("");
@@ -52,13 +51,12 @@ function Login() {
           setLoading(false);
           console.log(res.response.data.errors);
           if (res.response.status === 422) {
-            seterrors(res.response.data.validation_errors);
+            seterrors(res.response.data.errors);
           }
-         
         });
     } catch (error) {
       // alert("oops, invalid credentials")
-      console.log(error)
+      console.log(error);
       setLoading(false);
       setServerError("Invalid credentials.");
       setTimeout(() => {
@@ -79,24 +77,35 @@ function Login() {
                 Logo
               </log.Card.Title>
               <log.Card.Body>
+                <div className="mb-2">
                 <span>Email</span>
                 <input
                   type="email"
-                  className="form-control shadow-none mb-4"
+                  className="form-control shadow-none"
                   name="email"
                   onChange={handleinput}
                   value={logininput.email}
                 />
-                
+                {errors && (
+                  <div className="flex">
+                    <span className="dede">{errors[0]}</span>
+                  </div>
+                )}
+                </div>
+
                 <span>Password</span>
                 <input
                   type="password"
-                  className="form-control shadow-none mb-4"
+                  className="form-control shadow-none"
                   name="password"
                   onChange={handleinput}
                   value={logininput.password}
                 />
-                
+                {errors && (
+                  <div className="flex">
+                    <span className="dede">{errors[1]}</span>
+                  </div>
+                )}
 
                 <div className="logbtn">
                   <button
