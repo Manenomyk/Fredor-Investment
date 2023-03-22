@@ -1,0 +1,26 @@
+.register{
+    margin-top: 3rem;
+    padding-top: 1rem;
+    box-Shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  .registericon{
+    font-size: 5rem;
+    margin-left: 8rem;
+  }
+  .registerinput{
+    padding: 10px;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    border: 1px solid grey;
+    width: 18rem;
+  }
+  #registerbtn{
+    width: 150px;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+  }
+  #signuplink{
+margin-left: 2rem;
+text-decoration: none;
+  }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .homenav{
     box-Shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     height: 10vh;
@@ -36,7 +38,11 @@
 }
 
 .name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 2rem;
+    font-family: 'Oswald', sans-serif;
 }
 
 .content{

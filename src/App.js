@@ -20,6 +20,7 @@ import AdminItemList from './Admin/AdminItemList/AdminItemList';
 import AdminTransactions from './Admin/AdminTransactions/AdminTransactions';
 import AdminNewUsers from './Admin/AdminUsers/AdminNewUsers';
 import Logs from './Admin/Logs/Logs';
+import Register from './Admin/Register/Register';
 
 
 //Authorizer
@@ -48,9 +49,15 @@ import ClerkTransactions from './Clerk/ClerkTransactions/ClerkTransactions';
 import AcceptReturns from './Clerk/AcceptReturns/AcceptReturns';
 import Returns from './Clerk/AcceptReturns/Returns'
 
+axios.defaults.baseURL ="http://127.0.0.1:8000/";
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post['Accept'] = 'application/json';
+axios.defaults.withCredentials = true;
+
 function App() {
   return (
     <div>
+      
       <Router>
         <Routes>
 
@@ -69,6 +76,7 @@ function App() {
           <Route exact path='/admintransactions' element={<AdminTransactions />}></Route>
           <Route exact path='/adminnewusers' element={<AdminNewUsers />}></Route>
           <Route exact path='/logs' element={<Logs />}></Route>
+          <Route exact path='/register' element={<Register />} ></Route>
 
 
 
