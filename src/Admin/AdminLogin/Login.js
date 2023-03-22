@@ -2,33 +2,72 @@ import axios from "axios";
 import React, { useState } from "react";
 import * as log from "react-bootstrap";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+
 
 function Login() {
-
-const [logininput, setlogin] = useState({
-  email:'',
-  password:'',
-});
-
-const handleinput = (e) =>{
-  e.persist();
-  setlogin({...logininput, [e.target.name]: e.target.value}); 
-};
-
-
-const loginsubmit= (e)=>
-{
-  e.preventdefault();
-
-  const data ={
-    email: logininput.email,
-    password: logininput.password,
-  }
-
-  axios.post(`api/login`, data).then(res=>{
-
+  const navigate = useNavigate();
+  const [serverError, setServerError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [successResponse, setSuccessResponse] = useState("");
+  const [errors, seterrors] = useState({});
+  const [isSub, setsub] = useState(false);
+  const [logininput, setlogin] = useState({
+    email: "",
+    password: "",
   });
-}
+
+  const handleinput = (e) => {
+    e.persist();
+    setlogin({ ...logininput, [e.target.name]: e.target.value });
+  };
+
+  const loginsubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      email: logininput.email,
+      password: logininput.password,
+    };
+
+    try {
+      axios
+        .post(`/api/login`, data)
+        .then((res) => {
+          console.log(res.status);
+
+          setLoading(false);
+          if (res.status === 200) {
+            setSuccessResponse("you have been registered successfully.");
+            setTimeout(() => {
+              setSuccessResponse("");
+            }, 2000);
+
+            // alert("registered successfully")
+            navigate("/admindashboard");
+          } else {
+          }
+        })
+        .catch((res) => {
+          setLoading(false);
+          console.log(res.response.data.errors);
+          if (res.response.status === 422) {
+            seterrors(res.response.data.validation_errors);
+          }
+         
+        });
+    } catch (error) {
+      // alert("oops, invalid credentials")
+      console.log(error)
+      setLoading(false);
+      setServerError("Invalid credentials.");
+      setTimeout(() => {
+        setServerError("");
+      }, 2000);
+
+      navigate("/register");
+    }
+  };
 
   return (
     <div>
@@ -48,6 +87,7 @@ const loginsubmit= (e)=>
                   onChange={handleinput}
                   value={logininput.email}
                 />
+                
                 <span>Password</span>
                 <input
                   type="password"
@@ -56,9 +96,15 @@ const loginsubmit= (e)=>
                   onChange={handleinput}
                   value={logininput.password}
                 />
+                
 
                 <div className="logbtn">
-                  <button className="logbtn btn btn-success" onClick={loginsubmit}>Login</button>
+                  <button
+                    className="logbtn btn btn-success"
+                    onClick={loginsubmit}
+                  >
+                    Login
+                  </button>
                 </div>
               </log.Card.Body>
             </log.Card>

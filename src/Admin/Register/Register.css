@@ -10,7 +10,7 @@
   }
   .registerinput{
     padding: 10px;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     border-radius: 10px;
     border: 1px solid grey;
     width: 18rem;
@@ -23,4 +23,15 @@
   #signuplink{
 margin-left: 2rem;
 text-decoration: none;
+  }
+
+  .dede{
+    color: red;
+    /* margin: 1rem; */
+    font-size: 14px;
+    /* display: flex; */
+  }
+
+  .form{
+    margin-bottom: 1rem;
   }
