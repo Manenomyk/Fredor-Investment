@@ -173,7 +173,7 @@ function ClerkSidebar() {
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
 
