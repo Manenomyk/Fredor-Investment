@@ -33,9 +33,11 @@ function Login() {
       axios
         .post(`/api/login`, data)
         .then((res) => {
-          console.log(res.status);
+          console.log(res);
 
           setLoading(false);
+          localStorage.setItem("auth_token", res.data.token);
+           localStorage.setItem("auth_name", JSON.stringify(res.data));
           if (res.status === 200) {
             setSuccessResponse("you have been registered successfully.");
             setTimeout(() => {
@@ -49,13 +51,13 @@ function Login() {
         })
         .catch((res) => {
           setLoading(false);
-          console.log(res.response.data.errors);
+          console.log(res);
           if (res.response.status === 422) {
             seterrors(res.response.data.errors);
           }
         });
     } catch (error) {
-      // alert("oops, invalid credentials")
+      alert("oops, invalid credentials")
       console.log(error);
       setLoading(false);
       setServerError("Invalid credentials.");
