@@ -1,9 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ClerkSidebar from '../ClerkSidebar/ClerkSidebar';
 import * as clerkpro from 'react-bootstrap';
 import { IoMdContact } from "react-icons/io";
+import axios from 'axios';
 
 function ClerkProfile() {
+
+  const [Clerkprof, setclerkprof] = useState({
+    name:'',
+    email:'',
+    phone_number:'',
+    id_number:'',
+    location:'',
+  });
+
+  const handleinput =(e)=>{
+    e.persist();
+
+    setclerkprof({...Clerkprof, [e.target.name]: e.target.value})
+  };
+
+  const clerkupdate =(e)=>{
+    e.preventDefault();
+
+    const data={
+      name: Clerkprof.name,
+      email: Clerkprof.email,
+      phone_number: Clerkprof.phone_number,
+      id_number: Clerkprof.id_number,
+      location: Clerkprof.location,
+    };
+
+    try {
+      axios.post(`api/clerkprofile`, data).then((res)=>{
+        console.log(res);
+      }).catch((res)=>{
+        console.log(res);
+      })
+      
+    } catch (error) {
+      
+    }
+  }
   return (
     <div>
       <ClerkSidebar />
@@ -26,31 +64,31 @@ function ClerkProfile() {
                     <clerkpro.Card.Body className='mx-auto'>
                       <div>
                         <div>Name</div>
-                        <input name='name' className='form-control shadow-none profinput' type="text" />
+                        <input name='name' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
                       </div>
                       
                       <div>
                         <div>Email adress</div>
-                        <input name='email' className='form-control shadow-none profinput' type="text" />
+                        <input name='email'onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
                       </div>
                       <div>
                         <div>Phone number</div>
-                        <input name='phone_number' className='form-control shadow-none profinput' type="text" />
+                        <input name='phone_number' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
                       </div>
                       <div>
                         <div>Id Number</div>
-                        <input name='id_number' className='form-control shadow-none profinput' type="text" />
+                        <input name='id_number' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
                       </div>
                       <div>
                         <div>Location</div>
-                        <input  name='location' className='form-control shadow-none profinput' type="text" />
+                        <input  name='location' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
                       </div>
                     
                   
                       
 
                       <div>
-                          <button className='btn btn-success' id='updatebtn'>Update</button>
+                          <button onClick={clerkupdate} className='btn btn-success' id='updatebtn'>Update</button>
                                   
                       </div>
                       <a href="" id='uplink'>Update password?</a>
