@@ -22,39 +22,45 @@ function AdminSidebar() {
         e.preventDefault();
 
         setLoading(true);
-        axios.post(`/api/logout`) .then(res =>{
-            setLoading(false);
-
-            if (res.status === 200) {
-
-                localStorage.removeItem("auth_token");
-                localStorage.removeItem("auth_name", JSON.stringify(res.data.user));
+        try {
+            axios.post(`/api/logout`) .then(res =>{
+                console.log(res);
+                setLoading(false);
+    
+                if (res.status === 200) {
+    
+                    localStorage.removeItem("auth_token");
+                    localStorage.removeItem("auth_name", JSON.stringify(res.data.user));
+            
+            
+                    setSuccessResponse("you have been registered successfully.");
+                    setTimeout(() => {
+                      setSuccessResponse("")
+                    }, 2000);
+    
+                    navigate('/');
         
         
-                setSuccessResponse("you have been registered successfully.");
-                setTimeout(() => {
-                  setSuccessResponse("")
-                }, 2000);
+                } else {
+        
+                    alert("Log out Incomplete")
+        
+                }
+            }).catch(res =>{
+                console.log(res);
+                    
+                setLoading(false);
+                setServerError("Failed to log out")
+                setTimeout(()=>{
+                    setServerError("")
+                },2000)
+    
+                    
+                    });
+        } catch (error) {
+            alert('Ooops, failed to logout');
+        }
 
-                navigate('/');
-    
-    
-            } else {
-    
-                alert("Log out Incomplete")
-    
-            }
-        }).catch(res =>{
-
-                
-            setLoading(false);
-            setServerError("Failed to log out")
-            setTimeout(()=>{
-                setServerError("")
-            },2000)
-
-                
-                });
     }
 
 
@@ -114,7 +120,7 @@ function AdminSidebar() {
                     })}
                 </ul>
 
-                {/* <div className='log'>
+                <div className='logout'>
                 <div>
                         {loading&&(
                             <button onClick={logoutSubmit} style={{fontSize:"18px",background:"transparent",color:"black",border:"none",marginLeft:"28px"}}><div style={{placeItems:"center",display:"grid",top:"50%",transform:"translate Y(50%)"}}>
@@ -134,7 +140,7 @@ function AdminSidebar() {
                     <button onClick={logoutSubmit} style={{border:'none', background:"transparent"}}>Logout</button></h5>
                         )}
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
      );

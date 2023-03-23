@@ -52,21 +52,15 @@
 .row #title:hover{
     color: black;
 }
-.log{
-    position: relative;
-    top: 45%;
-    left: 10%;
+.logout{
+    position: absolute;
+    top: 94%;
+    left: 2%;
     cursor: pointer;
 }
-.log:hover{
-    color: red;
-}
+
 #logouticon{
     margin-right: 30px;
     color: black;
     font-size: 23px;
 }
-
-/* .profsidebar{
-    display: flex;
-} */
