@@ -168,11 +168,6 @@ const createuser = (e) =>{
                           </div>
                       </div>
                       
-                    
-                  
-                      <div className='details2 d-flex mb-3'>
-                            <button onClick={createuser} className='btn btn-success'>Create User</button>
-                      </div>
                       <div className="">
                     <div>
                       {loading && (
