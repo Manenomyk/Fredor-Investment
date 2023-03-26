@@ -2,10 +2,15 @@ import React, {useState} from "react";
 import AdminSidebar from "../AdminSidebar/AdminSidebar";
 import * as adminadd from "react-bootstrap";
 import "./AdminCustomerList.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Oval } from "react-loader-spinner";
 
 function AdminAddCustomer() {
+  const [serverError, setServerError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [successResponse, setSuccessResponse] = useState("");
+  const navigate = useNavigate()
   const [customer, setcustomer] = useState({
     plate_name: "",
     plate_code: "",
