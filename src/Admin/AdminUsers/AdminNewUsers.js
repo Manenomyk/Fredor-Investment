@@ -2,12 +2,15 @@ import React, {useState} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import './AdminUsers.css';
 import * as adminnew from 'react-bootstrap';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
 
 
 function AdminNewUsers() {
-
+  const [serverError, setServerError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [successResponse, setSuccessResponse] = useState("");
+  const navigate = useNavigate();
 const [newuser, setnewuser] = useState({
   name: '',
   email: '',
@@ -34,10 +37,11 @@ const createuser = (e) =>{
     location: newuser.location,
     designition: newuser.designition,
   };
-
+  setLoading(true);
   try {
     axios.post(`api/createuser`, data).then((res)=>{
       console.log(res);
+
     })
     .catch((res)=>{
       console.log(res);
