@@ -55,6 +55,7 @@ function AuthAddItem() {
               <authadd.Card.Title>
                 <div className="edit">Add new item</div>
               </authadd.Card.Title>
+              <form onSubmit={authaddnew} className="mx-auto">
               <authadd.Card.Body className="mx-auto">
                 <div>
                   <label>Item description</label>
@@ -86,11 +87,13 @@ function AuthAddItem() {
                 </div>
 
                 <div className="details2 d-flex mb-3">
-                  <button onClick={authaddnew} className="btn btn-success mt-3">
+                  <button type="submit" className="btn btn-success mt-3">
                     Add item
                   </button>
                 </div>
               </authadd.Card.Body>
+              </form>
+              
             </authadd.Card>
           </authadd.Col>
         </authadd.Row>
