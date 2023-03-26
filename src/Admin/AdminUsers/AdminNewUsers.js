@@ -4,6 +4,7 @@ import './AdminUsers.css';
 import * as adminnew from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
+import { Oval } from "react-loader-spinner";
 
 
 function AdminNewUsers() {
@@ -49,24 +50,73 @@ const createuser = (e) =>{
         }, 2000);
 
       } else {
-        alert("Item not added");
+        alert("user not added");
       }
     })
     .catch((res)=>{
       console.log(res); 
       setLoading(false);
-      setServerError("Failed to add item");
+      setServerError("Failed to add user");
       setTimeout(() => {
         setServerError("");
       }, 2000);
     });
   } catch (error) {
-    alert('What could be wrong?');
+    alert("Ooops, invalid action");
   }
 }
 
   return (
     <div>
+      <div
+        style={{
+          marginLeft: "40%",
+          marginTop: "0%",
+          position: "fixed",
+          zIndex: "2",
+        }}
+      >
+        {successResponse && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#28a745",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {successResponse}
+          </div>
+        )}
+        {serverError && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#ED4337",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {serverError}
+          </div>
+        )}
+      </div>
         <AdminSidebar />
         
         <adminnew.Container>
@@ -123,7 +173,50 @@ const createuser = (e) =>{
                       <div className='details2 d-flex mb-3'>
                             <button onClick={createuser} className='btn btn-success'>Create User</button>
                       </div>
+                      <div className="">
+                    <div>
+                      {loading && (
+                        <button 
+                          style={{
+                            fontSize: "18px",
+                            background: "transparent",
+                            color: "black",
+                            border: "none",
+                            marginLeft: "28px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              placeItems: "center",
+                              display: "grid",
+                              top: "50%",
+                              transform: "translate Y(50%)",
+                            }}
+                          >
+                            <div
+                              style={{ display: "flex", flexDirection: "row" }}
+                            >
+                              <Oval
+                                height="20"
+                                width="20"
+                                color="blue"
+                                ariaLabel="loading"
+                              />
+                              <span style={{ fontSize: "20px" }}>
+                                Adding User...
+                              </span>
+                            </div>
+                          </div>
+                        </button>
+                      )}
 
+                      {!loading && (
+                                              <div className='details2 d-flex mb-3'>
+                                              <button onClick={createuser} className='btn btn-success'>Create User</button>
+                                        </div>
+                      )}
+                    </div>
+                  </div>
                     </adminnew.Card.Body>
                   </adminnew.Card>
                 </adminnew.Col>
