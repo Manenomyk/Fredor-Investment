@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AdminSidebar from "../AdminSidebar/AdminSidebar";
 import * as adminadd from "react-bootstrap";
 import "./AdminCustomerList.css";
@@ -10,7 +10,7 @@ function AdminAddCustomer() {
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
   const [successResponse, setSuccessResponse] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [customer, setcustomer] = useState({
     plate_name: "",
     plate_code: "",
@@ -49,23 +49,22 @@ function AdminAddCustomer() {
             setTimeout(() => {
               setSuccessResponse("");
             }, 2000);
-    
           } else {
             alert("Customer not added");
           }
         })
-        .catch((res)=>{
-          console.log(res); 
+        .catch((res) => {
+          console.log(res);
           setLoading(false);
           setServerError("Failed to add Customer");
           setTimeout(() => {
             setServerError("");
           }, 2000);
         });
-      } catch (error) {
-        alert("Ooops, invalid action");
-      }
+    } catch (error) {
+      alert("Ooops, invalid action");
     }
+  };
   return (
     <div>
       <div
@@ -198,10 +197,54 @@ function AdminAddCustomer() {
                     />
                   </div>
                 </div>
-                <div className="details2 d-flex mb-3">
-                  <button onClick={addcustomer} className="btn btn-success">
-                    Add customer
-                  </button>
+                <div className="">
+                  <div>
+                    {loading && (
+                      <button
+                        style={{
+                          fontSize: "18px",
+                          background: "transparent",
+                          color: "black",
+                          border: "none",
+                          marginLeft: "28px",
+                        }}
+                      >
+                        <div
+                          style={{
+                            placeItems: "center",
+                            display: "grid",
+                            top: "50%",
+                            transform: "translate Y(50%)",
+                          }}
+                        >
+                          <div
+                            style={{ display: "flex", flexDirection: "row" }}
+                          >
+                            <Oval
+                              height="20"
+                              width="20"
+                              color="blue"
+                              ariaLabel="loading"
+                            />
+                            <span style={{ fontSize: "20px" }}>
+                              Adding customer...
+                            </span>
+                          </div>
+                        </div>
+                      </button>
+                    )}
+
+                    {!loading && (
+                      <div className="details2 d-flex mb-3">
+                        <button
+                          onClick={addcustomer}
+                          className="btn btn-success"
+                        >
+                          Add customer
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </adminadd.Card.Body>
             </adminadd.Card>
