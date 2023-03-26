@@ -41,13 +41,27 @@ const createuser = (e) =>{
   try {
     axios.post(`api/createuser`, data).then((res)=>{
       console.log(res);
+      setLoading(false);
+      if (res.status === 200) {
+        setSuccessResponse("User created successfully.");
+        setTimeout(() => {
+          setSuccessResponse("");
+        }, 2000);
 
+      } else {
+        alert("Item not added");
+      }
     })
     .catch((res)=>{
-      console.log(res);
-    })
+      console.log(res); 
+      setLoading(false);
+      setServerError("Failed to add item");
+      setTimeout(() => {
+        setServerError("");
+      }, 2000);
+    });
   } catch (error) {
-    
+    alert('What could be wrong?');
   }
 }
 
