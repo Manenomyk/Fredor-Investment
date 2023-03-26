@@ -5,6 +5,7 @@ import * as authadd from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Oval } from "react-loader-spinner";
 
 function AuthAddItem() {
   const [serverError, setServerError] = useState("");
@@ -159,11 +160,55 @@ function AuthAddItem() {
                       type="text"
                     />
                   </div>
+                  
+                  <div className="">
+                    <div>
+                      {loading && (
+                        <button 
+                          style={{
+                            fontSize: "18px",
+                            background: "transparent",
+                            color: "black",
+                            border: "none",
+                            marginLeft: "28px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              placeItems: "center",
+                              display: "grid",
+                              top: "50%",
+                              transform: "translate Y(50%)",
+                            }}
+                          >
+                            <div
+                              style={{ display: "flex", flexDirection: "row" }}
+                            >
+                              <Oval
+                                height="20"
+                                width="20"
+                                color="blue"
+                                ariaLabel="loading"
+                              />
+                              <span style={{ fontSize: "20px" }}>
+                                Adding item...
+                              </span>
+                            </div>
+                          </div>
+                        </button>
+                      )}
 
-                  <div className="details2 d-flex mb-3">
-                    <button type="submit" className="btn btn-success mt-3">
-                      Add item
-                    </button>
+                      {!loading && (
+                        <div className="details2 d-flex mb-3">
+                          <button
+                            type="submit"
+                            className="btn btn-success mt-3"
+                          >
+                            Add item
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </authadd.Card.Body>
               </form>
