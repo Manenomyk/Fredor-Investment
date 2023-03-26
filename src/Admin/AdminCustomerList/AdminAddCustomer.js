@@ -37,18 +37,35 @@ function AdminAddCustomer() {
       phone: customer.phone,
       company: customer.company,
     };
-
+    setLoading(true);
     try {
       axios
         .post(`api/addcustomer`, data)
         .then((res) => {
           console.log(res);
+          setLoading(false);
+          if (res.status === 200) {
+            setSuccessResponse("Customer added successfully.");
+            setTimeout(() => {
+              setSuccessResponse("");
+            }, 2000);
+    
+          } else {
+            alert("Customer not added");
+          }
         })
-        .catch((res) => {
-          console.log(res);
+        .catch((res)=>{
+          console.log(res); 
+          setLoading(false);
+          setServerError("Failed to add Customer");
+          setTimeout(() => {
+            setServerError("");
+          }, 2000);
         });
-    } catch (error) {}
-  };
+      } catch (error) {
+        alert("Ooops, invalid action");
+      }
+    }
   return (
     <div>
       <AdminSidebar />
