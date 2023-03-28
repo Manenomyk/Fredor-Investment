@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import './AdminItemList.css';
 import * as adminlist from 'react-bootstrap';
+import axios from 'axios';
 
 function AdminItemList() {
+  const [items, setitems] = useState([]);
+  useEffect(() => {
+   axios.get(`api/adminViewitems`).then(res=>{
+    console.log(res.data.viewitems);
+    if(res.status === 200)
+    {
+      setitems(res.data.viewitems)
+    }
+   });
+  }, []);
   return (
     <div>
         <AdminSidebar />
