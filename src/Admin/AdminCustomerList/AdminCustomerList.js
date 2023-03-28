@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function AdminCustomerList() {
-  const [users, setusers] = useState([]);
+  const [customerlist, setcustomerlist] = useState([]);
 
   useEffect(() => {
-   axios.get(`api/adminViewUsers`).then(res=>{
-    console.log(res.data.viewusers);
+   axios.get(`api/adminViewcustomerlist`).then(res=>{
+    console.log(res.data.viewcustomerlist);
     if(res.status === 200)
     {
-      setusers(res.data.viewusers)
+      setcustomerlist(res.data.viewcustomerlist)
     }
    });
   }, []);
@@ -39,14 +39,17 @@ function AdminCustomerList() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>KCD</td>
-                  <td>Kaluti</td>
-                  <td>12345678</td>
-                  <td>123456789</td>
-                  <td>Maswali</td>
+                {customerlist.map((list,index)=>[
+                  <tr key={index}>
+                  <th scope="row">{list.id}</th>
+                  <td>{list.plate_name}</td>
+                  <td>{list.driver}</td>
+                  <td>{list.id_no}</td>
+                  <td>{list.phone}</td>
+                  <td>{list.company}</td>
                 </tr>
+                ])}
+                
               </tbody>
             </table>
             </admincusto.Col>
