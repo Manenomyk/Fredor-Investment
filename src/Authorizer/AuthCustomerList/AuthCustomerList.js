@@ -1,10 +1,24 @@
-import React from 'react';
+import React,  {useEffect, useState} from 'react';
 import AuthSidebar from '../AuthSidebar/AuthSidebar';
 import './AuthCustomerList.css';
 import * as authlist from 'react-bootstrap';
+import axios from 'axios';
 
 
 function AuthCustomerList() {
+  
+  const [customerlist, setcustomerlist] = useState([]);
+
+  useEffect(() => {
+   axios.get(`api/adminViewcustomerlist`).then(res=>{
+    console.log(res.data.viewcustomerlist);
+    if(res.status === 200)
+    {
+      setcustomerlist(res.data.viewcustomerlist)
+    }
+   });
+  }, []);
+
   return (
     <div>
         <AuthSidebar />
