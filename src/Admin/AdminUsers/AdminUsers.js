@@ -1,11 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import './AdminUsers.css';
 import * as adminusers from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 function AdminUsers() {
+
+  const [users, setusers] = useState([]);
+
+  useEffect(() => {
+   axios.get(`api/adminViewUsers`).then(res=>{
+    console.log(res.data.viewusers);
+    if(res.status === 200)
+    {
+      setusers(res.data.viewusers)
+    }
+   });
+  }, []);
+  
   return (
     <div>
         <AdminSidebar />
@@ -28,14 +42,21 @@ function AdminUsers() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mwavu Lukas</td>
-                  <td>mwavu@gmail.com</td>
-                  <td>123456789</td>
-                  <td>Admin</td>
+                {users.map((item, index)=>(
+                  console.log('i', item),
+
+                  <tr key={index}>
+
+                  <th scope="row">{item.id}</th>
+                  <td>{item.name}</td>
+                  <td>{item.email}</td>
+                  <td>{item.phone_number}</td>
+                  <td>{item.roles}</td>
                   <td><button className='btn btn-danger btn-sm'>Delete</button></td>
                 </tr>
+
+                ))}
+                
               </tbody>
             </table>
             </adminusers.Col>
