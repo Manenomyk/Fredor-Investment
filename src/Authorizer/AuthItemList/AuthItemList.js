@@ -1,10 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AuthSidebar from '../AuthSidebar/AuthSidebar';
 import './AuthItemList.css';
 import * as authlist from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function AuthItemList() {
+
+  const [items, setitems] = useState([]);
+  useEffect(() => {
+   axios.get(`api/adminViewitems`).then(res=>{
+    console.log(res.data.viewitems);
+    if(res.status === 200)
+    {
+      setitems(res.data.viewitems)
+    }
+   });
+  }, []);
+
   return (
     <div>
         <AuthSidebar />
