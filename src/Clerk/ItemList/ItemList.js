@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ClerkSidebar from '../ClerkSidebar/ClerkSidebar';
 import './ItemList.css';
 import * as list from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ItemList.css';
+import axios from 'axios';
 
 function ItemList() {
+  const [items, setitems] = useState([]);
+  useEffect(() => {
+    axios.get(`api/adminViewitems`).then((res) => {
+      console.log(res.data.viewitems);
+      if (res.status === 200) {
+        setitems(res.data.viewitems);
+      }
+    });
+  }, []);
   return (
     <div>
       <ClerkSidebar />
