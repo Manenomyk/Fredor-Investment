@@ -1,32 +1,35 @@
-import React, {useEffect, useState} from 'react';
-import AuthSidebar from '../AuthSidebar/AuthSidebar';
-import './AuthItemList.css';
-import * as authlist from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import AuthSidebar from "../AuthSidebar/AuthSidebar";
+import "./AuthItemList.css";
+import * as authlist from "react-bootstrap";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 function AuthItemList() {
-
   const [items, setitems] = useState([]);
   useEffect(() => {
-   axios.get(`api/adminViewitems`).then(res=>{
-    console.log(res.data.viewitems);
-    if(res.status === 200)
-    {
-      setitems(res.data.viewitems)
-    }
-   });
+    axios.get(`api/adminViewitems`).then((res) => {
+      console.log(res.data.viewitems);
+      if (res.status === 200) {
+        setitems(res.data.viewitems);
+      }
+    });
   }, []);
 
   return (
     <div>
-        <AuthSidebar />
+      <AuthSidebar />
 
-        <authlist.Container>
+      <authlist.Container>
         <authlist.Row>
-          <authlist.Col className='mt-3' lg={12}>
-          <Link to={'../AuthAddItem'} className='addcustomer btn btn-primary btn-sm float-end mb-2'>+</Link >
-          <table className="table">
+          <authlist.Col className="mt-3" lg={12}>
+            <Link
+              to={"../AuthAddItem"}
+              className="addcustomer btn btn-primary btn-sm float-end mb-2"
+            >
+              +
+            </Link>
+            <table className="table">
               <thead className="tablehead">
                 <tr>
                   <th scope="col">No</th>
@@ -38,37 +41,28 @@ function AuthItemList() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Maize - 90kg bag</td>
-                  <td>5000</td>
-                  <td>5800</td>
-                  <td><button className='btn btn-danger btn-sm'>Edit</button></td>
-                  <td><button className='btn btn-success btn-sm'>Save</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Soya - 90kg bag</td>
-                  <td>15200</td>
-                  <td>15800</td>
-                  <td><button className='btn btn-danger btn-sm'>Edit</button></td>
-                  <td><button className='btn btn-success btn-sm'>Save</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sura kg</td>
-                  <td>140</td>
-                  <td>155</td>
-                  <td><button className='btn btn-danger btn-sm'>Edit</button></td>
-                  <td><button className='btn btn-success btn-sm'>Save</button></td>
-                </tr>
+                {items.map((item, index) => [
+                  <tr key={index}>
+                    <th scope="row">{item.id}</th>
+                    <td>{item.description}</td>
+                    <td>{item.b_price}</td>
+                    <td>{item.s_price}</td>
+                    <td>
+                      <button className="btn btn-success btn-sm">Edit</button>
+                    </td>
+
+                    <td>
+                      <button className="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                  </tr>,
+                ])}
               </tbody>
             </table>
           </authlist.Col>
         </authlist.Row>
       </authlist.Container>
     </div>
-  )
+  );
 }
 
-export default AuthItemList
+export default AuthItemList;
