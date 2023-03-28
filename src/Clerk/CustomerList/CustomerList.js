@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function CustomerList() {
   const [customerlist, setcustomerlist] = useState([]);
-  
+
   useEffect(() => {
    axios.get(`api/adminViewcustomerlist`).then(res=>{
     console.log(res.data.viewcustomerlist);
@@ -37,14 +37,16 @@ function CustomerList() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>KCD</td>
-                  <td>Kaluti</td>
-                  <td>12345678</td>
-                  <td>123456789</td>
-                  <td>Maswali</td>
+                {customerlist.map((list,index)=>[
+                  <tr key={index}>
+                  <th scope="row">{list.id}</th>
+                  <td>{list.plate_name}</td>
+                  <td>{list.driver}</td>
+                  <td>{list.id_no}</td>
+                  <td>{list.phone}</td>
+                  <td>{list.company}</td>
                 </tr>
+                ])}
               </tbody>
             </table>
             </custolist.Col>
