@@ -1,9 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ClerkSidebar from '../ClerkSidebar/ClerkSidebar';
 import './CustomerList.css';
 import * as custolist from 'react-bootstrap';
+import axios from 'axios';
 
 function CustomerList() {
+  const [customerlist, setcustomerlist] = useState([]);
+  
+  useEffect(() => {
+   axios.get(`api/adminViewcustomerlist`).then(res=>{
+    console.log(res.data.viewcustomerlist);
+    if(res.status === 200)
+    {
+      setcustomerlist(res.data.viewcustomerlist)
+    }
+   });
+  }, []);
   return (
     <div>
       <ClerkSidebar />
