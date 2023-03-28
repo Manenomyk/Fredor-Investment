@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import * as admincusto from 'react-bootstrap';
 import './AdminCustomerList.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function AdminCustomerList() {
+  const [users, setusers] = useState([]);
+
+  useEffect(() => {
+   axios.get(`api/adminViewUsers`).then(res=>{
+    console.log(res.data.viewusers);
+    if(res.status === 200)
+    {
+      setusers(res.data.viewusers)
+    }
+   });
+  }, []);
   return (
     <div>
         <AdminSidebar />
