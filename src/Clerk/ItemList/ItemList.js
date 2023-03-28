@@ -33,24 +33,14 @@ function ItemList() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Maize - 90kg bag</td>
-                  <td>5000</td>
-                  <td>5800</td>
+              {items.map((item, index)=>[
+                  <tr key={index}>
+                  <th scope="row">{item.id}</th>
+                  <td>{item.description}</td>
+                  <td>{item.b_price}</td>
+                  <td>{item.s_price}</td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Soya - 90kg bag</td>
-                  <td>15200</td>
-                  <td>15800</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sura kg</td>
-                  <td>140</td>
-                  <td>155</td>
-                </tr>
+                ])}
               </tbody>
             </table>
           </list.Col>
