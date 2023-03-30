@@ -93,74 +93,77 @@ function Login() {
 
   return (
     <div>
-
       <log.Container className="logContainer">
         <log.Row>
-          <log.Col className=" mx-auto" lg={5}>
           <div className="containerone">
-        <div className="imgg">
-          <img src={login} alt="login" />
-        </div>
-        <div className="regconta">
-          <form action="" onSubmit={loginsubmit}>
-            <div className="ava">
-              <img className="avatar" src={avatar} alt="avatar" />
+            <div className="imgg">
+              <img src={login} alt="login" />
             </div>
-            <h2 className="wel">Welcome</h2>
-            <div className="input-div one">
-              <div className="i">
-                <i>
-                  <TfiEmail />
-                </i>
-              </div>
-              <div>
-                <h5>Username</h5>
-                <input
-                  className="input"
-                  type="text"
-                  name="email"
-                  onChange={handleinput}
-                  value={logininput.email}
-                />
-                {errors && (
-                  <div className="flex">
-                    <span className="dede">{errors[0]}</span>
+            <div className="regconta">
+              <form action="" onSubmit={loginsubmit}>
+                <div className="ava">
+                  <img className="avatar" src={avatar} alt="avatar" />
+                </div>
+                <h2 className="wel">Welcome</h2>
+                <div className="input-div one">
+                  <div className="i">
+                    <i>
+                      <TfiEmail />
+                    </i>
                   </div>
-                )}
-              </div>
-            </div>
-            <div className="input-div two">
-              <div className="i">
-                <i>
-                  <FaLock />
-                </i>
-              </div>
-              <div>
-                <h5>password</h5>
-                <input
-                  className="input"
-                  type="password"
-                  name="password"
-                  onChange={handleinput}
-                  value={logininput.password}
-                />
-                {errors && (
-                  <div className="flex">
-                    <span className="dede">{errors[1]}</span>
+                  <div>
+                    <h5>Username</h5>
+                    <input
+                      className="input"
+                      type="text"
+                      name="email"
+                      onChange={handleinput}
+                      value={logininput.email}
+                    />
+                    {errors && (
+                      <div className="flex">
+                        <span className="dede">{errors[0]}</span>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
+                </div>
+                <div className="input-div two">
+                  <div className="i">
+                    <i>
+                      <FaLock />
+                    </i>
+                  </div>
+                  <div>
+                    <h5>password</h5>
+                    <input
+                      className="input"
+                      type="password"
+                      name="password"
+                      onChange={handleinput}
+                      value={logininput.password}
+                    />
+                    {errors && (
+                      <div className="flex">
+                        <span className="dede">{errors[1]}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <a href="#">Forgot password?</a>
+                <input
+                  type="submit"
+                  name=""
+                  id=""
+                  className="btn1"
+                  value="Login"
+                />
+                <div className="botom">
+                  <p>Dont have an account?</p>
+                  <a href="/register">Register</a>
+                </div>
+              </form>
             </div>
-            <a href="#">Forgot password?</a>
-            <input type="submit" name="" id="" className="btn1" value="Login" />
-            <div className="botom">
-              <p>Dont have an account?</p>
-              <a href="/register">Register</a>
-            </div>
-          </form>
-        </div>
-      </div>
-          </log.Col>
+          </div>
         </log.Row>
       </log.Container>
     </div>
