@@ -8,6 +8,7 @@ import avatar from '../../Images/avatar.svg';
 import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 
+
 function Login() {
   
   const inputs = document.querySelectorAll('.input');
@@ -126,6 +127,10 @@ inputs.forEach(input =>{
             </div>
             <a href="#" >Forgot password?</a>
             <input type="submit" name="" id="" className="btn1" value="Login"/>
+            <div className="botom">
+            <p>Dont have an account?</p>
+            <a href="/register" >Register</a>
+            </div>
           </form>
         </div>
   </log.Container>

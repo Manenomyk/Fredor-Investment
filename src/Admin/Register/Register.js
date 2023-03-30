@@ -9,6 +9,7 @@ import login from '../../Images/login.svg';
 import avatar from '../../Images/avatar.svg';
 import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
 
 function Register() {
 
@@ -175,7 +176,7 @@ function Register() {
             </div>
             <div className="input-div one">
               <div className="i">
-                <i><FaUserCircle /></i>
+                <i><TfiEmail /></i>
               </div>
               <div>
                 <h5>Email</h5>
