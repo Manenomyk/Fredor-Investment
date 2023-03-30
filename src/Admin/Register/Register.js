@@ -154,163 +154,160 @@ function Register() {
       <register.Container>
         <register.Row>
           <div className="containerone">
-        <div className="imgg">
-          <img src={login} alt="login" />
-        </div>
-        <div className="regconta">
-          <form action="" onSubmit={regSubmit}>
-            <div className="ava">
-              <img className="avatar" src={avatar} alt="avatar" />
+            <div className="imgg">
+              <img src={login} alt="login" />
             </div>
-            <h2 className="wel">Welcome</h2>
-            <div className="input-div one">
-              <div className="i">
-                <i>
-                  <FaUserCircle />
-                </i>
-              </div>
-              <div>
-                <h5>Username</h5>
-                <input
-                  placeholder="Username"
-                  className="input"
-                  type="text"
-                  onChange={handleIput}
-                  value={reg.name}
-                  name="name"
-                />
-                {errors && (
+            <div className="regconta">
+              <form action="" onSubmit={regSubmit}>
+                <div className="ava">
+                  <img className="avatar" src={avatar} alt="avatar" />
+                </div>
+                <h2 className="wel">Welcome</h2>
+                <div className="input-div one">
+                  <div className="i">
+                    <i>
+                      <FaUserCircle />
+                    </i>
+                  </div>
+                  <div>
+                    <h5>Username</h5>
+                    <input
+                      placeholder="Username"
+                      className="input"
+                      type="text"
+                      onChange={handleIput}
+                      value={reg.name}
+                      name="name"
+                    />
+                    {errors && (
                       <div className="flex">
                         <span className="dede">{errors[0]}</span>
                       </div>
                     )}
-              </div>
-            </div>
-            <div className="input-div one">
-              <div className="i">
-                <i>
-                  <TfiEmail />
-                </i>
-              </div>
-              <div>
-                <h5>Email</h5>
-                <input
-                  placeholder="Email"
-                  className="input"
-                  type="text"
-                  onChange={handleIput}
-                  value={reg.email}
-                  name="email"
-                />
-                {errors && (
+                  </div>
+                </div>
+                <div className="input-div one">
+                  <div className="i">
+                    <i>
+                      <TfiEmail />
+                    </i>
+                  </div>
+                  <div>
+                    <h5>Email</h5>
+                    <input
+                      placeholder="Email"
+                      className="input"
+                      type="text"
+                      onChange={handleIput}
+                      value={reg.email}
+                      name="email"
+                    />
+                    {errors && (
                       <div className="flex">
                         <span className="dede">{errors[1]}</span>
                       </div>
                     )}
-              </div>
-            </div>
-            <div className="input-div two">
-              <div className="i">
-                <i>
-                  <FaLock />
-                </i>
-              </div>
-              <div>
-                <h5>password</h5>
-                <input
-                  placeholder="password"
-                  className="input"
-                  type="password"
-                  onChange={handleIput}
-                  value={reg.password}
-                  name="password"
-                />
-                {errors && (
+                  </div>
+                </div>
+                <div className="input-div two">
+                  <div className="i">
+                    <i>
+                      <FaLock />
+                    </i>
+                  </div>
+                  <div>
+                    <h5>password</h5>
+                    <input
+                      placeholder="password"
+                      className="input"
+                      type="password"
+                      onChange={handleIput}
+                      value={reg.password}
+                      name="password"
+                    />
+                    {errors && (
                       <div className="flex">
                         <span className="dede">{errors[3]}</span>
                       </div>
                     )}
-              </div>
-            </div>
-            <div className="input-div two">
-              <div className="i">
-                <i>
-                  <FaLock />
-                </i>
-              </div>
-              <div>
-                <h5> confirm password</h5>
-                <input
-                  placeholder="confirm password"
-                  className="input"
-                  type="password"
-                  onChange={handleIput}
-                  value={reg.password_confirmation}
-                  name="password_confirmation"
-                />
-                {errors && (
+                  </div>
+                </div>
+                <div className="input-div two">
+                  <div className="i">
+                    <i>
+                      <FaLock />
+                    </i>
+                  </div>
+                  <div>
+                    <h5> confirm password</h5>
+                    <input
+                      placeholder="confirm password"
+                      className="input"
+                      type="password"
+                      onChange={handleIput}
+                      value={reg.password_confirmation}
+                      name="password_confirmation"
+                    />
+                    {errors && (
                       <div className="flex">
                         <span className="dede">{errors[4]}</span>
                       </div>
                     )}
-              </div>
-            </div>
-            <div>
-                    {loading && (
-                      <button
-                        onSubmit={regSubmit}
+                  </div>
+                </div>
+                <div>
+                  {loading && (
+                    <button
+                      onSubmit={regSubmit}
+                      style={{
+                        fontSize: "18px",
+                        background: "transparent",
+                        color: "black",
+                        border: "none",
+                        marginLeft: "28px",
+                      }}
+                    >
+                      <div
                         style={{
-                          fontSize: "18px",
-                          background: "transparent",
-                          color: "black",
-                          border: "none",
-                          marginLeft: "28px",
+                          placeItems: "center",
+                          display: "grid",
+                          top: "50%",
+                          transform: "translate Y(50%)",
                         }}
                       >
-                        <div
-                          style={{
-                            placeItems: "center",
-                            display: "grid",
-                            top: "50%",
-                            transform: "translate Y(50%)",
-                          }}
-                        >
-                          <div
-                            style={{ display: "flex", flexDirection: "row" }}
-                          >
-                            <Oval
-                              height="20"
-                              width="20"
-                              color="blue"
-                              ariaLabel="loading"
-                            />
-                            <span style={{ fontSize: "20px" }}>
-                              Signing in...
-                            </span>
-                          </div>
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <Oval
+                            height="20"
+                            width="20"
+                            color="blue"
+                            ariaLabel="loading"
+                          />
+                          <span style={{ fontSize: "20px" }}>
+                            Signing up...
+                          </span>
                         </div>
-                      </button>
-                    )}
+                      </div>
+                    </button>
+                  )}
 
-                    {!loading && (
-                       <input
-                       onSubmit={regSubmit}
-                         type="submit"
-                         name=""
-                         id=""
-                         className="btn1"
-                         value="Register"
-                       />
-                    )}
-                  </div>
-            <div className="botom">
-              <p>Already have an account?</p>
-              <a href="/login">Login</a>
+                  {!loading && (
+                    <input
+                      onSubmit={regSubmit}
+                      type="submit"
+                      name=""
+                      id=""
+                      className="btn1"
+                      value="Register"
+                    />
+                  )}
+                </div>
+                <div className="botom">
+                  <p>Already have an account?</p>
+                  <a href="/login">Login</a>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-      </div>
-          
+          </div>
         </register.Row>
       </register.Container>
     </div>

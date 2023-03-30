@@ -5,9 +5,9 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import login from "../../Images/login.svg";
 import avatar from "../../Images/avatar.svg";
-import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
+import { Oval } from "react-loader-spinner";
 
 function Login() {
   const inputs = document.querySelectorAll(".input");
@@ -50,7 +50,7 @@ function Login() {
       email: logininput.email,
       password: logininput.password,
     };
-
+    setLoading(true);
     try {
       axios
         .post(`/api/login`, data)
@@ -150,13 +150,52 @@ function Login() {
                   </div>
                 </div>
                 <a href="#">Forgot password?</a>
-                <input
-                  type="submit"
-                  name=""
-                  id=""
-                  className="btn1"
-                  value="Login"
-                />
+                <div>
+                  {loading && (
+                    <button
+                      onSubmit={loginsubmit}
+                      style={{
+                        fontSize: "18px",
+                        background: "transparent",
+                        color: "black",
+                        border: "none",
+                        marginLeft: "28px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          placeItems: "center",
+                          display: "grid",
+                          top: "50%",
+                          transform: "translate Y(50%)",
+                        }}
+                      >
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <Oval
+                            height="20"
+                            width="20"
+                            color="blue"
+                            ariaLabel="loading"
+                          />
+                          <span style={{ fontSize: "20px" }}>
+                            Signing in...
+                          </span>
+                        </div>
+                      </div>
+                    </button>
+                  )}
+
+                  {!loading && (
+                    <input
+                      onSubmit={loginsubmit}
+                      type="submit"
+                      name=""
+                      id=""
+                      className="btn1"
+                      value="Login"
+                    />
+                  )}
+                </div>
                 <div className="botom">
                   <p>Dont have an account?</p>
                   <a href="/register">Register</a>
