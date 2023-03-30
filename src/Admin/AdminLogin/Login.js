@@ -7,6 +7,7 @@ import login from "../../Images/login.svg";
 import avatar from "../../Images/avatar.svg";
 import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
 
 function Login() {
   const inputs = document.querySelectorAll(".input");
@@ -109,7 +110,7 @@ function Login() {
             <div className="input-div one">
               <div className="i">
                 <i>
-                  <FaUserCircle />
+                  <TfiEmail />
                 </i>
               </div>
               <div>

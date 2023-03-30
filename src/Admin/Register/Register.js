@@ -151,12 +151,14 @@ function Register() {
         )}
       </div>
 
-      <register.Container className="containerone">
+      <register.Container>
+        <register.Row>
+          <div className="containerone">
         <div className="imgg">
           <img src={login} alt="login" />
         </div>
         <div className="regconta">
-          <form action="">
+          <form action="" onSubmit={regSubmit}>
             <div className="ava">
               <img className="avatar" src={avatar} alt="avatar" />
             </div>
@@ -169,7 +171,19 @@ function Register() {
               </div>
               <div>
                 <h5>Username</h5>
-                <input placeholder="Username" className="input" type="text" />
+                <input
+                  placeholder="Username"
+                  className="input"
+                  type="text"
+                  onChange={handleIput}
+                  value={reg.name}
+                  name="name"
+                />
+                {errors && (
+                      <div className="flex">
+                        <span className="dede">{errors[0]}</span>
+                      </div>
+                    )}
               </div>
             </div>
             <div className="input-div one">
@@ -180,7 +194,19 @@ function Register() {
               </div>
               <div>
                 <h5>Email</h5>
-                <input placeholder="Email" className="input" type="text" />
+                <input
+                  placeholder="Email"
+                  className="input"
+                  type="text"
+                  onChange={handleIput}
+                  value={reg.email}
+                  name="email"
+                />
+                {errors && (
+                      <div className="flex">
+                        <span className="dede">{errors[1]}</span>
+                      </div>
+                    )}
               </div>
             </div>
             <div className="input-div two">
@@ -195,7 +221,15 @@ function Register() {
                   placeholder="password"
                   className="input"
                   type="password"
+                  onChange={handleIput}
+                  value={reg.password}
+                  name="password"
                 />
+                {errors && (
+                      <div className="flex">
+                        <span className="dede">{errors[3]}</span>
+                      </div>
+                    )}
               </div>
             </div>
             <div className="input-div two">
@@ -210,101 +244,21 @@ function Register() {
                   placeholder="confirm password"
                   className="input"
                   type="password"
+                  onChange={handleIput}
+                  value={reg.password_confirmation}
+                  name="password_confirmation"
                 />
+                {errors && (
+                      <div className="flex">
+                        <span className="dede">{errors[4]}</span>
+                      </div>
+                    )}
               </div>
             </div>
-
-            <input
-              type="submit"
-              name=""
-              id=""
-              className="btn1"
-              value="Register"
-            />
-            <div className="botom">
-              <p>Already have an account?</p>
-              <a href="/login">Login</a>
-            </div>
-          </form>
-        </div>
-      </register.Container>
-
-      <register.Container>
-        <register.Row>
-          <register.Col className="mx-auto" lg={5}>
-            <register.Card className="register">
-              <register.Card.Title className="mx-auto">
-                <IoMdContact className="registericon" />
-                <register.Card.Body>
-                  <div className="form">
-                    <p>Name</p>
-                    <input
-                      onChange={handleIput}
-                      value={reg.name}
-                      name="name"
-                      type="text"
-                      className="registerinput"
-                      placeholder="Enter name"
-                    />
-                    {errors && (
-                      <div className="flex">
-                        <span className="dede">{errors[0]}</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="form">
-                    <p>Email</p>
-                    <input
-                      onChange={handleIput}
-                      value={reg.email}
-                      name="email"
-                      type="text"
-                      className="registerinput"
-                      placeholder="Enter email address"
-                    />
-                    {errors && (
-                      <div className="flex">
-                        <span className="dede">{errors[1]}</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="form">
-                    <p>Password</p>
-                    <input
-                      onChange={handleIput}
-                      value={reg.password}
-                      name="password"
-                      type="password"
-                      className="registerinput"
-                      placeholder="Enter password"
-                    />
-                  </div>
-                  {errors && (
-                    <div className="flex">
-                      <span className="dede">{errors[2]}</span>
-                    </div>
-                  )}
-                  <div className="form">
-                    <p>Confirm Password</p>
-                    <input
-                      onChange={handleIput}
-                      value={reg.password_confirmation}
-                      name="password_confirmation"
-                      type="password"
-                      className="registerinput"
-                      placeholder="Confirm Password"
-                    />
-                    {errors && (
-                      <div className="flex">
-                        <span className="dede">{errors[3]}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div>
+            <div>
                     {loading && (
                       <button
-                        onClick={regSubmit}
+                        onSubmit={regSubmit}
                         style={{
                           fontSize: "18px",
                           background: "transparent",
@@ -339,25 +293,24 @@ function Register() {
                     )}
 
                     {!loading && (
-                      <button
-                        onClick={regSubmit}
-                        className="btn btn-primary"
-                        id="registerbtn"
-                      >
-                        Register
-                      </button>
+                       <input
+                       onSubmit={regSubmit}
+                         type="submit"
+                         name=""
+                         id=""
+                         className="btn1"
+                         value="Register"
+                       />
                     )}
                   </div>
-
-                  <div>
-                    <a id="signuplink" href="/login">
-                      Already have an account?
-                    </a>
-                  </div>
-                </register.Card.Body>
-              </register.Card.Title>
-            </register.Card>
-          </register.Col>
+            <div className="botom">
+              <p>Already have an account?</p>
+              <a href="/login">Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+          
         </register.Row>
       </register.Container>
     </div>
