@@ -5,28 +5,24 @@ import "./Register.css";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
-import login from '../../Images/login.svg';
-import avatar from '../../Images/avatar.svg';
+import login from "../../Images/login.svg";
+import avatar from "../../Images/avatar.svg";
 import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 
 function Register() {
-
-
-  
-  const inputs = document.querySelectorAll('.input');
+  const inputs = document.querySelectorAll(".input");
   function focusFunc() {
-    let parent =this.parentNode.parentNode;
-    parent.classList.add('focus');
+    let parent = this.parentNode.parentNode;
+    parent.classList.add("focus");
   }
   function blurFunc() {
-    let parent =this.parentNode.parentNode;
-    if(this.value == ""){
-      parent.classList.remove('focus');
+    let parent = this.parentNode.parentNode;
+    if (this.value == "") {
+      parent.classList.remove("focus");
     }
   }
-
 
   const navigate = useNavigate();
   const [serverError, setServerError] = useState("");
@@ -156,18 +152,20 @@ function Register() {
       </div>
 
       <register.Container className="containerone">
-  <div className="imgg">
+        <div className="imgg">
           <img src={login} alt="login" />
         </div>
         <div className="regconta">
           <form action="">
             <div className="ava">
-            <img className="avatar" src={avatar} alt="avatar" />
+              <img className="avatar" src={avatar} alt="avatar" />
             </div>
             <h2 className="wel">Welcome</h2>
             <div className="input-div one">
               <div className="i">
-                <i><FaUserCircle /></i>
+                <i>
+                  <FaUserCircle />
+                </i>
               </div>
               <div>
                 <h5>Username</h5>
@@ -176,7 +174,9 @@ function Register() {
             </div>
             <div className="input-div one">
               <div className="i">
-                <i><TfiEmail /></i>
+                <i>
+                  <TfiEmail />
+                </i>
               </div>
               <div>
                 <h5>Email</h5>
@@ -185,31 +185,49 @@ function Register() {
             </div>
             <div className="input-div two">
               <div className="i">
-                <i><FaLock /></i>
+                <i>
+                  <FaLock />
+                </i>
               </div>
               <div>
                 <h5>password</h5>
-                <input placeholder="password" className="input" type="password" />
+                <input
+                  placeholder="password"
+                  className="input"
+                  type="password"
+                />
               </div>
             </div>
             <div className="input-div two">
               <div className="i">
-                <i><FaLock /></i>
+                <i>
+                  <FaLock />
+                </i>
               </div>
               <div>
                 <h5> confirm password</h5>
-                <input placeholder="confirm password" className="input" type="password" />
+                <input
+                  placeholder="confirm password"
+                  className="input"
+                  type="password"
+                />
               </div>
             </div>
-            
-            <input type="submit" name="" id="" className="btn1" value="Register"/>
+
+            <input
+              type="submit"
+              name=""
+              id=""
+              className="btn1"
+              value="Register"
+            />
             <div className="botom">
-            <p>Already have an account?</p>
-            <a href="/login" >Login</a>
+              <p>Already have an account?</p>
+              <a href="/login">Login</a>
             </div>
           </form>
         </div>
-  </register.Container>
+      </register.Container>
 
       <register.Container>
         <register.Row>
@@ -228,10 +246,11 @@ function Register() {
                       className="registerinput"
                       placeholder="Enter name"
                     />
-                    {errors &&
-                    <div className="flex">
+                    {errors && (
+                      <div className="flex">
                         <span className="dede">{errors[0]}</span>
-                    </div>}
+                      </div>
+                    )}
                   </div>
                   <div className="form">
                     <p>Email</p>
@@ -243,10 +262,11 @@ function Register() {
                       className="registerinput"
                       placeholder="Enter email address"
                     />
-                    {errors &&
-                    <div className="flex">
+                    {errors && (
+                      <div className="flex">
                         <span className="dede">{errors[1]}</span>
-                    </div>}
+                      </div>
+                    )}
                   </div>
                   <div className="form">
                     <p>Password</p>
@@ -258,12 +278,12 @@ function Register() {
                       className="registerinput"
                       placeholder="Enter password"
                     />
-                    
                   </div>
-                  {errors &&
+                  {errors && (
                     <div className="flex">
-                        <span className="dede">{errors[2]}</span>
-                    </div>}
+                      <span className="dede">{errors[2]}</span>
+                    </div>
+                  )}
                   <div className="form">
                     <p>Confirm Password</p>
                     <input
@@ -274,10 +294,11 @@ function Register() {
                       className="registerinput"
                       placeholder="Confirm Password"
                     />
-                    {errors &&
-                    <div className="flex">
+                    {errors && (
+                      <div className="flex">
                         <span className="dede">{errors[3]}</span>
-                    </div>}
+                      </div>
+                    )}
                   </div>
 
                   <div>
