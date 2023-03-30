@@ -5,6 +5,10 @@ import "./Register.css";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
+import login from '../../Images/login.svg';
+import avatar from '../../Images/avatar.svg';
+import { FaUserCircle } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 
 function Register() {
   const navigate = useNavigate();
@@ -133,6 +137,40 @@ function Register() {
           </div>
         )}
       </div>
+
+      <register.Container className="containerone">
+  <div className="imgg">
+          <img src={login} alt="login" />
+        </div>
+        <div className="regconta">
+          <form action="">
+            <div className="ava">
+            <img className="avatar" src={avatar} alt="avatar" />
+            </div>
+            <h2 className="wel">Welcome</h2>
+            <div className="input-div one">
+              <div className="i">
+                <i><FaUserCircle /></i>
+              </div>
+              <div>
+                <h5>Username</h5>
+                <input className="input" type="text" />
+              </div>
+            </div>
+            <div className="input-div two">
+              <div className="i">
+                <i><FaLock /></i>
+              </div>
+              <div>
+                <h5>password</h5>
+                <input className="input" type="password" />
+              </div>
+            </div>
+            <a href="#" >Forgot password?</a>
+            <input type="submit" name="" id="" className="btn1" value="Login"/>
+          </form>
+        </div>
+  </register.Container>
 
       <register.Container>
         <register.Row>
