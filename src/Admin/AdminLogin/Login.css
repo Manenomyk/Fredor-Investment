@@ -131,12 +131,18 @@ width: 50%;
     font-family: 'Poppins', sans-serif;
 }
 a{
-    display: block;
-    text-align: right;
+    /* display: flex;
+    text-align: right; */
     text-decoration: none;
     color: #999;
     font-size: 0.9rem;
+    font-weight: bold;
     transition: .3s;
+}
+.botom{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 a:hover{
     color: #fbc37a;

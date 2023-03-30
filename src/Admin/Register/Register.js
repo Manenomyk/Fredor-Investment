@@ -11,6 +11,22 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 
 function Register() {
+
+
+  
+  const inputs = document.querySelectorAll('.input');
+  function focusFunc() {
+    let parent =this.parentNode.parentNode;
+    parent.classList.add('focus');
+  }
+  function blurFunc() {
+    let parent =this.parentNode.parentNode;
+    if(this.value == ""){
+      parent.classList.remove('focus');
+    }
+  }
+
+
   const navigate = useNavigate();
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -154,7 +170,16 @@ function Register() {
               </div>
               <div>
                 <h5>Username</h5>
-                <input className="input" type="text" />
+                <input placeholder="Username" className="input" type="text" />
+              </div>
+            </div>
+            <div className="input-div one">
+              <div className="i">
+                <i><FaUserCircle /></i>
+              </div>
+              <div>
+                <h5>Email</h5>
+                <input placeholder="Email" className="input" type="text" />
               </div>
             </div>
             <div className="input-div two">
@@ -163,11 +188,24 @@ function Register() {
               </div>
               <div>
                 <h5>password</h5>
-                <input className="input" type="password" />
+                <input placeholder="password" className="input" type="password" />
               </div>
             </div>
-            <a href="#" >Forgot password?</a>
-            <input type="submit" name="" id="" className="btn1" value="Login"/>
+            <div className="input-div two">
+              <div className="i">
+                <i><FaLock /></i>
+              </div>
+              <div>
+                <h5> confirm password</h5>
+                <input placeholder="confirm password" className="input" type="password" />
+              </div>
+            </div>
+            
+            <input type="submit" name="" id="" className="btn1" value="Register"/>
+            <div className="botom">
+            <p>Already have an account?</p>
+            <a href="/login" >Login</a>
+            </div>
           </form>
         </div>
   </register.Container>
