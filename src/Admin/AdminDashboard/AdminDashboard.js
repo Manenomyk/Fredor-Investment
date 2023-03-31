@@ -1,6 +1,7 @@
 import React from "react";
 import AdminSidebar from "../AdminSidebar/AdminSidebar";
 import * as dash from "react-bootstrap";
+import './AdminDashboard.css';
 
 function AdminDashboard() {
   return (
