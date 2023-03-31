@@ -5,12 +5,12 @@ import './AdminDashboard.css';
 
 function AdminDashboard() {
   return (
-    <div>
+    <div className="admindash">
       <AdminSidebar />
 
       <dash.Container>
         <dash.Row className="mt-4">
-          <dash.Col className="mx-auto" lg={3}>
+          <dash.Col className="mx-auto mb-3" lg={3} >
             <dash.Card
               id="homcard1"
               style={{
@@ -34,7 +34,7 @@ function AdminDashboard() {
             </dash.Card>
           </dash.Col>
 
-          <dash.Col className="mx-auto" lg={3}>
+          <dash.Col className="mx-auto mb-3" lg={3}>
             <dash.Card
               id="homcard1"
               style={{
@@ -58,7 +58,7 @@ function AdminDashboard() {
             </dash.Card>
           </dash.Col>
 
-          <dash.Col className="mx-auto" lg={3}>
+          <dash.Col className="mx-auto mb-3" lg={3}>
             <dash.Card
               id="homcard1"
               style={{
@@ -82,7 +82,7 @@ function AdminDashboard() {
             </dash.Card>
           </dash.Col>
 
-          <dash.Col className="mx-auto" lg={3}>
+          <dash.Col className="mx-auto mb-3" lg={3}>
             <dash.Card
               id="homcard1"
               style={{
@@ -108,7 +108,7 @@ function AdminDashboard() {
         </dash.Row>
 
         <dash.Row className="mt-4">
-          <dash.Col id="procontent" className="mx-auto" lg={6}>
+          <dash.Col id="procontent" className="mx-auto mb-3" lg={6}>
             <div className="text-center mt-3 mb-3">Have a quick preview</div>
 
             <div>
@@ -136,7 +136,7 @@ function AdminDashboard() {
               </table>
             </div>
           </dash.Col>
-          <dash.Col id="procontent" className="mx-auto" lg={4}>
+          <dash.Col id="procontent" className="mx-auto mb-3" lg={4}>
             <div className="text-center mt-3 mb-3">Pending statuses</div>
             <div>
               <table
