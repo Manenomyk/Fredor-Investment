@@ -6,7 +6,7 @@
 
 
 .containerone{
-    width: 100vw;
+    width: auto;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -61,14 +61,16 @@ function Login() {
           localStorage.setItem("auth_token", res.data.token);
           localStorage.setItem("auth_name", JSON.stringify(res.data));
           if (res.status === 200) {
-            setSuccessResponse("you have been registered successfully.");
+            setSuccessResponse("you have been Logged successfully.");
             setTimeout(() => {
               setSuccessResponse("");
             }, 2000);
 
-            // alert("registered successfully")
+            
             navigate("/admindashboard");
           } else {
+           
+            navigate("/register");
           }
         })
         .catch((res) => {
@@ -82,17 +84,70 @@ function Login() {
       alert("oops, invalid credentials");
       console.log(error);
       setLoading(false);
+      alert("Login failled");
+      navigate("/register");
       setServerError("Invalid credentials.");
+      
       setTimeout(() => {
         setServerError("");
       }, 2000);
 
-      navigate("/register");
+      
     }
   };
 
   return (
     <div>
+       <div
+        style={{
+          marginLeft: "45%",
+          marginTop: "0%",
+          position: "fixed",
+          zIndex: "2",
+        }}
+      >
+        {successResponse && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#28a745",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {successResponse}
+          </div>
+        )}
+        {serverError && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#ED4337",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {serverError}
+          </div>
+        )}
+      </div>
+
       <log.Container className="logContainer">
         <log.Row>
           <div className="containerone">
