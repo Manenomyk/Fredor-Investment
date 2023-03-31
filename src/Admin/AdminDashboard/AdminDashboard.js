@@ -117,19 +117,19 @@ function AdminDashboard() {
               >
                 <thead>
                   <tr>
-                    <th scope="col">Investment</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Total shares </th>
-                    <th scope="col">Share prices</th>
+                    <th scope="col">Vehicle Name</th>
+                    <th scope="col">Total out</th>
+                    <th scope="col">Total Returns </th>
+                    <th scope="col">Total sales</th>
                   </tr>
                 </thead>
 
                 <tbody>
                   <tr>
-                    <td>Good House</td>
-                    <td>Real Estate</td>
-                    <td>20,000</td>
-                    <td>100</td>
+                    <td>KCD</td>
+                    <td>800000</td>
+                    <td>200000</td>
+                    <td>60000</td>
                   </tr>
                 </tbody>
               </table>
@@ -144,7 +144,7 @@ function AdminDashboard() {
               >
                 <thead>
                   <tr>
-                    <th scope="col">Investment</th>
+                    <th scope="col">Customer Name</th>
                     <th scope="col">Total</th>
                   </tr>
                 </thead>
