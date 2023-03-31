@@ -29,7 +29,6 @@ function AdminDashboard() {
                   All projects:
                 </p>
                 <h3>23</h3>
-                {/* <input style={{width:"3rem", fontSize:"12px",borderTop:"none", borderLeft:"none",borderRight:"none"}} placeholder="54" type="text" className='form-control shadow-none' /> */}
               </div>
             </dash.Card>
           </dash.Col>
@@ -54,7 +53,6 @@ function AdminDashboard() {
                   Completed projects:
                 </p>
                 <h3>23</h3>
-                {/* <input style={{width:"3rem", fontSize:"12px",borderTop:"none", borderLeft:"none",borderRight:"none"}} placeholder="54" type="text" className='form-control shadow-none' /> */}
               </div>
             </dash.Card>
           </dash.Col>
@@ -79,7 +77,6 @@ function AdminDashboard() {
                   Capital invested:
                 </p>
                 <h3>23</h3>
-                {/* <input style={{width:"3rem", fontSize:"12px",borderTop:"none", borderLeft:"none",borderRight:"none"}} placeholder="54" type="text" className='form-control shadow-none' /> */}
               </div>
             </dash.Card>
           </dash.Col>
@@ -104,7 +101,6 @@ function AdminDashboard() {
                   Projects invested in:
                 </p>
                 <h3>23</h3>
-                {/* <input style={{width:"3rem", fontSize:"12px",borderTop:"none", borderLeft:"none",borderRight:"none"}} placeholder="54" type="text" className='form-control shadow-none' /> */}
               </div>
             </dash.Card>
           </dash.Col>
