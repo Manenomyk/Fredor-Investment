@@ -1,13 +1,13 @@
-import React from 'react';
-import AdminSidebar from '../AdminSidebar/AdminSidebar';
-import * as dash from 'react-bootstrap';
+import React from "react";
+import AdminSidebar from "../AdminSidebar/AdminSidebar";
+import * as dash from "react-bootstrap";
 
 function AdminDashboard() {
   return (
     <div>
-        <AdminSidebar />
+      <AdminSidebar />
 
-        <dash.Container>
+      <dash.Container>
         <dash.Row className="mt-4">
           <dash.Col className="mx-auto" lg={3}>
             <dash.Card
@@ -20,13 +20,13 @@ function AdminDashboard() {
             >
               <div className="text-center mt-2">
                 <p>
-                  <i>Total projects</i>
+                  <i>Total Users</i>
                 </p>
               </div>
 
               <div className="">
                 <p style={{ fontSize: "12px", marginLeft: "4px" }}>
-                  All projects:
+                  All Users:
                 </p>
                 <h3>23</h3>
               </div>
@@ -44,13 +44,13 @@ function AdminDashboard() {
             >
               <div className="text-center mt-2">
                 <p>
-                  <i>Total Shares</i>
+                  <i>Total Vehicles</i>
                 </p>
               </div>
 
               <div className="">
                 <p style={{ fontSize: "12px", marginLeft: "4px" }}>
-                  Completed projects:
+                  Customerlist:
                 </p>
                 <h3>23</h3>
               </div>
@@ -68,13 +68,13 @@ function AdminDashboard() {
             >
               <div className="text-center mt-2">
                 <p>
-                  <i>Total capital</i>
+                  <i>Total sales</i>
                 </p>
               </div>
 
               <div className="">
                 <p style={{ fontSize: "12px", marginLeft: "4px" }}>
-                  Capital invested:
+                  Amount Received:
                 </p>
                 <h3>23</h3>
               </div>
@@ -92,13 +92,13 @@ function AdminDashboard() {
             >
               <div className="text-center mt-2">
                 <p>
-                  <i>Number of projects</i>
+                  <i>Total Sales Profit</i>
                 </p>
               </div>
 
               <div className="">
                 <p style={{ fontSize: "12px", marginLeft: "4px" }}>
-                  Projects invested in:
+                  Profit margin:
                 </p>
                 <h3>23</h3>
               </div>
@@ -161,8 +161,7 @@ function AdminDashboard() {
         </dash.Row>
       </dash.Container>
     </div>
-
-  )
+  );
 }
 
-export default AdminDashboard
+export default AdminDashboard;
