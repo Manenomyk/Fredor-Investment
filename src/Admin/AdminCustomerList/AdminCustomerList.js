@@ -4,9 +4,12 @@ import * as admincusto from 'react-bootstrap';
 import './AdminCustomerList.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
 
 function AdminCustomerList() {
   const [customerlist, setcustomerlist] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
    axios.get(`api/adminViewcustomerlist`).then(res=>{
@@ -19,7 +22,35 @@ function AdminCustomerList() {
   }, []);
   return (
     <div>
-        <AdminSidebar />
+        <div>
+        {!isOpen ? (
+          <div
+            style={{
+              marginTop: "1rem",
+              fontSize: "25px",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          >
+            <FaBars onClick={() => setIsOpen(!isOpen)} />
+          </div>
+        ) : (
+          <div>
+            <IoIosArrowDropleft
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                fontSize: "2rem",
+                color: "#007CBA",
+                position: "fixed",
+                top: "2%",
+                marginLeft: "187px",
+                cursor: "pointer",
+              }}
+            />
+            <AdminSidebar />
+          </div>
+        )}
+      </div>
 
         <admincusto.Container className=''>
           <admincusto.Row>
