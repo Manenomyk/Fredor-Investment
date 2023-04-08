@@ -5,9 +5,12 @@ import * as adminnew from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
 import { Oval } from "react-loader-spinner";
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
 
 
 function AdminNewUsers() {
+  const [isOpen, setIsOpen] = useState(false);
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
   const [successResponse, setSuccessResponse] = useState("");
@@ -117,7 +120,36 @@ const createuser = (e) =>{
           </div>
         )}
       </div>
-        <AdminSidebar />
+      <div>
+        {!isOpen ? (
+          <div
+            style={{
+              marginTop: "1rem",
+              fontSize: "25px",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          >
+            <FaBars onClick={() => setIsOpen(!isOpen)} />
+          </div>
+        ) : (
+          <div>
+            <IoIosArrowDropleft
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                fontSize: "2rem",
+                color: "#007CBA",
+                position: "fixed",
+                top: "2%",
+                marginLeft: "187px",
+                cursor: "pointer",
+              }}
+            />
+            <AdminSidebar />
+          </div>
+        )}
+      </div>
+
         
         <adminnew.Container>
         <Link to={'../AdminUsers'} className='addcustomer btn btn-primary btn-sm float-end mt-3'>Back</Link >
