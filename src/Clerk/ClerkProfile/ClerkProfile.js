@@ -3,9 +3,11 @@ import ClerkSidebar from '../ClerkSidebar/ClerkSidebar';
 import * as clerkpro from 'react-bootstrap';
 import { IoMdContact } from "react-icons/io";
 import axios from 'axios';
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
 
 function ClerkProfile() {
-
+  const [isOpen, setIsOpen] = useState(false);
   const [Clerkprof, setclerkprof] = useState({
     name:'',
     email:'',
@@ -44,7 +46,36 @@ function ClerkProfile() {
   }
   return (
     <div>
-      <ClerkSidebar />
+       <div>
+        {!isOpen ? (
+          <div
+            style={{
+              marginTop: "1rem",
+              fontSize: "25px",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          >
+            <FaBars onClick={() => setIsOpen(!isOpen)} />
+          </div>
+        ) : (
+          <div>
+            <IoIosArrowDropleft
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                fontSize: "2rem",
+                color: "#007CBA",
+                position: "fixed",
+                top: "2%",
+                marginLeft: "187px",
+                cursor: "pointer",
+              }}
+            />
+            <ClerkSidebar />
+          </div>
+        )}
+      </div>
+
 
 
 
