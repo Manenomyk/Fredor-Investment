@@ -4,8 +4,11 @@ import { IoMdContact } from "react-icons/io";
 import "./AuthProfile.css";
 import * as authprof from "react-bootstrap";
 import axios from "axios";
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
 
 function AuthProfile() {
+  const [isOpen, setIsOpen] = useState(false);
   const [authpro, setauthpro] = useState({
     name: "",
     email: "",
@@ -44,7 +47,35 @@ function AuthProfile() {
   };
   return (
     <div>
-      <AuthSidebar />
+      <div>
+        {!isOpen ? (
+          <div
+            style={{
+              marginTop: "1rem",
+              fontSize: "25px",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          >
+            <FaBars onClick={() => setIsOpen(!isOpen)} />
+          </div>
+        ) : (
+          <div>
+            <IoIosArrowDropleft
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                fontSize: "2rem",
+                color: "#007CBA",
+                position: "fixed",
+                top: "2%",
+                marginLeft: "187px",
+                cursor: "pointer",
+              }}
+            />
+           <AuthSidebar />
+          </div>
+        )}
+      </div>
 
       <authprof.Container>
         <authprof.Row>
