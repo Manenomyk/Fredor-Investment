@@ -3,8 +3,12 @@ import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import './AdminItemList.css';
 import * as adminlist from 'react-bootstrap';
 import axios from 'axios';
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
+
 
 function AdminItemList() {
+  const [isOpen, setIsOpen] = useState(false);
   const [items, setitems] = useState([]);
   useEffect(() => {
    axios.get(`api/adminViewitems`).then(res=>{
@@ -17,7 +21,36 @@ function AdminItemList() {
   }, []);
   return (
     <div>
-        <AdminSidebar />
+        <div>
+        {!isOpen ? (
+          <div
+            style={{
+              marginTop: "1rem",
+              fontSize: "25px",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          >
+            <FaBars onClick={() => setIsOpen(!isOpen)} />
+          </div>
+        ) : (
+          <div>
+            <IoIosArrowDropleft
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                fontSize: "2rem",
+                color: "#007CBA",
+                position: "fixed",
+                top: "2%",
+                marginLeft: "187px",
+                cursor: "pointer",
+              }}
+            />
+            <AdminSidebar />
+          </div>
+        )}
+      </div>
+
 
 
         <adminlist.Container>
