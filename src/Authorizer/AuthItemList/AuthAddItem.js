@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Oval } from "react-loader-spinner";
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
 
 function AuthAddItem() {
+  const [isOpen, setIsOpen] = useState(false);
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
   const [successResponse, setSuccessResponse] = useState("");
@@ -115,7 +118,36 @@ function AuthAddItem() {
         )}
       </div>
 
-      <AuthSidebar />
+      <div>
+        {!isOpen ? (
+          <div
+            style={{
+              marginTop: "1rem",
+              fontSize: "25px",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          >
+            <FaBars onClick={() => setIsOpen(!isOpen)} />
+          </div>
+        ) : (
+          <div>
+            <IoIosArrowDropleft
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                fontSize: "2rem",
+                color: "#007CBA",
+                position: "fixed",
+                top: "2%",
+                marginLeft: "187px",
+                cursor: "pointer",
+              }}
+            />
+           <AuthSidebar />
+          </div>
+        )}
+      </div>
+
 
       <authadd.Container>
         <Link
