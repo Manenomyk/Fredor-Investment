@@ -344,7 +344,7 @@ function Register() {
                     </button>
                   )}
 
-                  {!loading && (
+                  {/* {!loading && (
                     <input
                       onSubmit={regSubmit}
                       type="submit"
@@ -354,12 +354,12 @@ function Register() {
                       value="Register"
                     />
                     
-                  )}
+                  )} */}
                    <button
-                      className="btn btn-success"
+                      className="btn btn-success btn1"
                       onClick={() => setModalShow(true)}
                     >
-                      Edit
+                      Register
                     </button>
 
                     <MyVerticallyCenteredModal
