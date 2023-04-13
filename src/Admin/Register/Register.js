@@ -26,7 +26,9 @@ function MyVerticallyCenteredModal(props) {
         <register.Modal.Title id="contained-modal-title-vcenter"></register.Modal.Title>
       </register.Modal.Header>
       <register.Modal.Body>
-        <div>
+        <register.Row>
+          <register.Col lg={3} className="mx-auto">
+          <div>
           <div>
             <register.Image 
               className="d-block wellimg"
@@ -34,6 +36,16 @@ function MyVerticallyCenteredModal(props) {
             />
           </div>
         </div>
+          </register.Col>
+          <register.Col lg={6} className="mx-auto">
+          <div>
+          <div className="contheader">
+           Welcome to Fredor Investments
+          </div>
+        </div>
+          </register.Col>
+        </register.Row>
+        
       </register.Modal.Body>
       <register.Modal.Footer>
         <div>
