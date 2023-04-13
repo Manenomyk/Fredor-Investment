@@ -17,13 +17,13 @@ function AuthProfile() {
     location: "",
   });
 
-  useEffect(() => {
-    // const id=props.match.params.id;
-    axios.getUri(`api/profileupdate/${id}`).then(res=>{
-
-    })
+  // useEffect(() => {
+  //   const id=props.match.params.id;
+  //   axios.getUri(`api/profileupdate/${id}`).then(res=>{
+  //     console.log(res);
+  //   })
   
-  }, [])
+  // }, [props.match.params.id])
   
   const handleinput = (e) => {
     e.persist();
