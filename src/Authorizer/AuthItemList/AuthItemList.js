@@ -134,6 +134,7 @@ function AuthItemList() {
                       
                       <Link
                       variant="success"
+                      className="btn btn-success"
                       onClick={() => setModalShow(true)}
                     >
                       Edit
