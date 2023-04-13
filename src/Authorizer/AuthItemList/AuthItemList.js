@@ -58,6 +58,7 @@ function MyVerticallyCenteredModal(props) {
 }
 
 function AuthItemList() {
+  const [modalShow, setModalShow] = React.useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [items, setitems] = useState([]);
   useEffect(() => {
@@ -130,13 +131,13 @@ function AuthItemList() {
                     <td>{item.b_price}</td>
                     <td>{item.s_price}</td>
                     <td>
-                      <button className="btn btn-success btn-sm">Edit</button>
-                      <authlist.Button
-                      variant="primary"
+                      
+                      <Link
+                      variant="success"
                       onClick={() => setModalShow(true)}
                     >
-                      Share your idea
-                    </authlist.Button>
+                      Edit
+                    </Link>
 
                     <MyVerticallyCenteredModal
                       show={modalShow}
