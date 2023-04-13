@@ -17,7 +17,7 @@ function MyVerticallyCenteredModal(props) {
   return (
     <register.Modal
       {...props}
-      size="md"
+      size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -25,34 +25,7 @@ function MyVerticallyCenteredModal(props) {
         <register.Modal.Title id="contained-modal-title-vcenter"></register.Modal.Title>
       </register.Modal.Header>
       <register.Modal.Body>
-        <div>
-          Full Name
-          <input
-            className="form-control shadow-none mb-4"
-            name="name"
-            placeholder="Enter your name"
-            type="text"
-          />
-        </div>
-        <div>
-          Email Adress
-          <input
-            className="form-control shadow-none mb-4"
-            name="email"
-            placeholder="Enter Email Address"
-            type="email"
-          />
-        </div>
-        <div>
-          Voluteer/Contributor message
-          <textarea
-            rows={4}
-            className="form-control shadow-none mb-4"
-            name="massage"
-            placeholder="Share your message"
-            type="text"
-          />
-        </div>
+        
       </register.Modal.Body>
       <register.Modal.Footer>
         <div>
