@@ -133,7 +133,7 @@ function AuthItemList() {
                     <td>
                       
                       <Link
-                      variant="success"
+                      to='/ItemlistEdit/$ {item.id}'
                       className="btn btn-success"
                       onClick={() => setModalShow(true)}
                     >
