@@ -15,16 +15,16 @@ import { TfiEmail } from "react-icons/tfi";
 
 function MyVerticallyCenteredModal(props) {
   return (
-    <authlist.Modal
+    <register.Modal
       {...props}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <authlist.Modal.Header closeButton>
-        <authlist.Modal.Title id="contained-modal-title-vcenter"></authlist.Modal.Title>
-      </authlist.Modal.Header>
-      <authlist.Modal.Body>
+      <register.Modal.Header closeButton>
+        <register.Modal.Title id="contained-modal-title-vcenter"></register.Modal.Title>
+      </register.Modal.Header>
+      <register.Modal.Body>
         <div>
           Full Name
           <input
@@ -53,18 +53,19 @@ function MyVerticallyCenteredModal(props) {
             type="text"
           />
         </div>
-      </authlist.Modal.Body>
-      <authlist.Modal.Footer>
+      </register.Modal.Body>
+      <register.Modal.Footer>
         <div>
           <button type="submit" className="btn btn-primary">Send message</button>
         </div>
-      </authlist.Modal.Footer>
-    </authlist.Modal>
+      </register.Modal.Footer>
+    </register.Modal>
   );
 }
 
 
 function Register() {
+  const [modalShow, setModalShow] = React.useState(false);
   const inputs = document.querySelectorAll(".input");
   function focusFunc() {
     let parent = this.parentNode.parentNode;
