@@ -9,16 +9,16 @@ import { IoIosArrowDropleft } from "react-icons/io";
 
 function MyVerticallyCenteredModal(props) {
   return (
-    <home.Modal
+    <authlist.Modal
       {...props}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <home.Modal.Header closeButton>
-        <home.Modal.Title id="contained-modal-title-vcenter"></home.Modal.Title>
-      </home.Modal.Header>
-      <home.Modal.Body>
+      <authlist.Modal.Header closeButton>
+        <authlist.Modal.Title id="contained-modal-title-vcenter"></authlist.Modal.Title>
+      </authlist.Modal.Header>
+      <authlist.Modal.Body>
         <div>
           Full Name
           <input
@@ -47,13 +47,13 @@ function MyVerticallyCenteredModal(props) {
             type="text"
           />
         </div>
-      </home.Modal.Body>
-      <home.Modal.Footer>
+      </authlist.Modal.Body>
+      <authlist.Modal.Footer>
         <div>
           <button type="submit" className="btn btn-primary">Send message</button>
         </div>
-      </home.Modal.Footer>
-    </home.Modal>
+      </authlist.Modal.Footer>
+    </authlist.Modal>
   );
 }
 
