@@ -7,6 +7,56 @@ import axios from "axios";
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <home.Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <home.Modal.Header closeButton>
+        <home.Modal.Title id="contained-modal-title-vcenter"></home.Modal.Title>
+      </home.Modal.Header>
+      <home.Modal.Body>
+        <div>
+          Full Name
+          <input
+            className="form-control shadow-none mb-4"
+            name="name"
+            placeholder="Enter your name"
+            type="text"
+          />
+        </div>
+        <div>
+          Email Adress
+          <input
+            className="form-control shadow-none mb-4"
+            name="email"
+            placeholder="Enter Email Address"
+            type="email"
+          />
+        </div>
+        <div>
+          Voluteer/Contributor message
+          <textarea
+            rows={4}
+            className="form-control shadow-none mb-4"
+            name="massage"
+            placeholder="Share your message"
+            type="text"
+          />
+        </div>
+      </home.Modal.Body>
+      <home.Modal.Footer>
+        <div>
+          <button type="submit" className="btn btn-primary">Send message</button>
+        </div>
+      </home.Modal.Footer>
+    </home.Modal>
+  );
+}
+
 function AuthItemList() {
   const [isOpen, setIsOpen] = useState(false);
   const [items, setitems] = useState([]);
