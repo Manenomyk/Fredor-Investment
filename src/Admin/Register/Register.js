@@ -353,7 +353,19 @@ function Register() {
                       className="btn1"
                       value="Register"
                     />
+                    
                   )}
+                   <button
+                      className="btn btn-success"
+                      onClick={() => setModalShow(true)}
+                    >
+                      Edit
+                    </button>
+
+                    <MyVerticallyCenteredModal
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                    />
                 </div>
                 <div className="botom">
                   <p>Already have an account?</p>
