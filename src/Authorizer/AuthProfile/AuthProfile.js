@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import AuthSidebar from "../AuthSidebar/AuthSidebar";
 import { IoMdContact } from "react-icons/io";
 import "./AuthProfile.css";
@@ -17,6 +17,14 @@ function AuthProfile() {
     location: "",
   });
 
+  useEffect(() => {
+    // const id=props.match.params.id;
+    axios.getUri(`api/profileupdate/${id}`).then(res=>{
+
+    })
+  
+  }, [])
+  
   const handleinput = (e) => {
     e.persist();
 
