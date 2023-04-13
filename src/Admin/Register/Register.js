@@ -10,7 +10,8 @@ import avatar from "../../Images/avatar.svg";
 import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
-
+import { Link } from "react-router-dom";
+import welcome from '../../Images/welcome.svg';
 
 
 function MyVerticallyCenteredModal(props) {
@@ -25,11 +26,18 @@ function MyVerticallyCenteredModal(props) {
         <register.Modal.Title id="contained-modal-title-vcenter"></register.Modal.Title>
       </register.Modal.Header>
       <register.Modal.Body>
-        
+        <div>
+          <div>
+            <register.Image 
+              className="d-block wellimg"
+              src={welcome}
+            />
+          </div>
+        </div>
       </register.Modal.Body>
       <register.Modal.Footer>
         <div>
-          <button type="submit" className="btn btn-primary">Send message</button>
+          <Link to='/login'  className="btn btn-warning">Login</Link>
         </div>
       </register.Modal.Footer>
     </register.Modal>
