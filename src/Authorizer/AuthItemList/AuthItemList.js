@@ -131,6 +131,17 @@ function AuthItemList() {
                     <td>{item.s_price}</td>
                     <td>
                       <button className="btn btn-success btn-sm">Edit</button>
+                      <authlist.Button
+                      variant="primary"
+                      onClick={() => setModalShow(true)}
+                    >
+                      Share your idea
+                    </authlist.Button>
+
+                    <MyVerticallyCenteredModal
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                    />
                     </td>
 
                     <td>
