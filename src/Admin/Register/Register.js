@@ -11,6 +11,59 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 
+
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <authlist.Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <authlist.Modal.Header closeButton>
+        <authlist.Modal.Title id="contained-modal-title-vcenter"></authlist.Modal.Title>
+      </authlist.Modal.Header>
+      <authlist.Modal.Body>
+        <div>
+          Full Name
+          <input
+            className="form-control shadow-none mb-4"
+            name="name"
+            placeholder="Enter your name"
+            type="text"
+          />
+        </div>
+        <div>
+          Email Adress
+          <input
+            className="form-control shadow-none mb-4"
+            name="email"
+            placeholder="Enter Email Address"
+            type="email"
+          />
+        </div>
+        <div>
+          Voluteer/Contributor message
+          <textarea
+            rows={4}
+            className="form-control shadow-none mb-4"
+            name="massage"
+            placeholder="Share your message"
+            type="text"
+          />
+        </div>
+      </authlist.Modal.Body>
+      <authlist.Modal.Footer>
+        <div>
+          <button type="submit" className="btn btn-primary">Send message</button>
+        </div>
+      </authlist.Modal.Footer>
+    </authlist.Modal>
+  );
+}
+
+
 function Register() {
   const inputs = document.querySelectorAll(".input");
   function focusFunc() {
