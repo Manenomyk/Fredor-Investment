@@ -55,23 +55,28 @@ function Login() {
       axios
         .post(`/api/login`, data)
         .then((res) => {
-          console.log(res);
+          console.log(res.data.status);
 
           setLoading(false);
           localStorage.setItem("auth_token", res.data.token);
           localStorage.setItem("auth_name", JSON.stringify(res.data));
-          if (res.status === 200) {
+          if (res.data.status === 200) {
             setSuccessResponse("you have been Logged successfully.");
             setTimeout(() => {
               setSuccessResponse("");
             }, 2000);
 
             navigate("/admindashboard");
-          } else if (res.status === 401) {
-            alert("oops, invalid credentials");
+          } else if (res.data.status === 401) {
+            setLoading(false);
+            setServerError("Invalid credentials.");
+            setTimeout(() => {
+              setServerError("");
+            }, 2000);
           }else {
+            setLoading(false);
             alert("oops, Fields are required");
-            navigate("/register");
+            
           }
         })
         .catch((res) => {
