@@ -26,9 +26,12 @@ text-decoration: none;
   }
 
   .dede{
+    position: absolute;
+    top:-20%;
     color: red;
     /* margin: 1rem; */
     font-size: 14px;
+    padding-bottom: 2rem;
     /* display: flex; */
   }
 

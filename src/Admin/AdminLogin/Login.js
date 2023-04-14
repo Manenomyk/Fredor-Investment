@@ -36,6 +36,7 @@ function Login() {
   const [logininput, setlogin] = useState({
     email: "",
     password: "",
+    errorlist: [],
   });
 
   const handleinput = (e) => {
@@ -75,7 +76,6 @@ function Login() {
             }, 4000);
           }else {
             setLoading(false);
-            alert("oops, Fields are required");
             setlogin({ ...logininput, errorlist: res.data.errors });
             
           }
@@ -180,11 +180,9 @@ function Login() {
                       onChange={handleinput}
                       value={logininput.email}
                     />
-                    {errors && (
-                      <div className="flex">
-                        <span className="dede">{errors[0]}</span>
-                      </div>
-                    )}
+                    
+                        <span className="dede">{logininput.errorlist.email}</span>
+                     
                   </div>
                 </div>
                 <div className="input-div two">
@@ -202,11 +200,7 @@ function Login() {
                       onChange={handleinput}
                       value={logininput.password}
                     />
-                    {errors && (
-                      <div className="flex">
-                        <span className="dede">{errors[1]}</span>
-                      </div>
-                    )}
+                    <span className="dede">{logininput.errorlist.password}</span>
                   </div>
                 </div>
                 <a href="#">Forgot password?</a>
