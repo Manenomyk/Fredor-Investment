@@ -92,10 +92,15 @@ function MyVerticallyCenteredModal(props) {
               <b><u><i>Things to note</i></u></b>
             </div>
             <div className="mb-2">
-              The system has Three views ie the Admin, Clerk and Authorizer. 
-              <u><i> Unfotunately you cant create an account</i></u> and thats why you are here.
-              That privilege is given to the admin to create the different users who 
-              later will just login and can change/update their profile details.
+              <li>
+                <ol>
+                  <li>The system routes arent secured yet, You can manouver your way through</li>
+                  <li>By default the user/client password is the user ID number</li>
+                  <li>The system is still in development stage and is not yet complete</li>
+                  <li>The naming conventions ie CustomerList are as per the clients specifications</li>
+                  <li>Admin email: <u><i> admin@fredor.com</i></u>  password: <u><i> fredorinvestments</i></u></li>
+                </ol>
+              </li>
             </div>
           </register.Col>
         </register.Row>
