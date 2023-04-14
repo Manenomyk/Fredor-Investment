@@ -55,7 +55,7 @@ function Login() {
       axios
         .post(`/api/login`, data)
         .then((res) => {
-          console.log(res.data.status);
+          console.log(res.data.errors);
 
           setLoading(false);
           localStorage.setItem("auth_token", res.data.token);
@@ -72,10 +72,11 @@ function Login() {
             setServerError("Invalid credentials.");
             setTimeout(() => {
               setServerError("");
-            }, 2000);
+            }, 4000);
           }else {
             setLoading(false);
             alert("oops, Fields are required");
+            setlogin({ ...logininput, errorlist: res.data.errors });
             
           }
         })
