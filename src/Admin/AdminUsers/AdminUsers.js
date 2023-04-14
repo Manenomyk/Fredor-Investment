@@ -82,7 +82,7 @@ function AdminUsers() {
                   <td>{item.name}</td>
                   <td>{item.email}</td>
                   <td>{item.phone_number}</td>
-                  <td>{item.roles}</td>
+                  <td>{item.designition}</td>
                   <td><button className='btn btn-danger btn-sm'>Delete</button></td>
                 </tr>
 
