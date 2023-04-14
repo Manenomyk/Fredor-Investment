@@ -59,3 +59,7 @@ text-decoration: none;
     background-color: #148b49;
     margin-top: 1rem;
 }
+.thanksimg{
+  display: flex;
+  justify-content: center;
+}

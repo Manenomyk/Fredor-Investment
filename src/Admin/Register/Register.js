@@ -12,6 +12,7 @@ import { FaLock } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 import welcome from '../../Images/welcome.svg';
+import thanks from '../../Images/thanks.svg';
 
 
 function MyVerticallyCenteredModal(props) {
@@ -107,8 +108,11 @@ function MyVerticallyCenteredModal(props) {
         <hr />
         <register.Row>
           <register.Col lg={4} className="mx-auto">
-            <div>
-              
+            <div className="thanksimg">
+            <register.Image 
+              className="d-block wellimg"
+              src={thanks}
+            />
             </div>
           </register.Col>
         </register.Row>
