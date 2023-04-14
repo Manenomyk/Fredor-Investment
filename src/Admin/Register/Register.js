@@ -99,7 +99,7 @@ function MyVerticallyCenteredModal(props) {
                   <li>By default the user/client password is the user ID number</li>
                   <li>The system is still in development stage and is not yet complete</li>
                   <li>The naming conventions ie CustomerList are as per the clients specifications</li>
-                  <li>Admin email: <u><i> admin@fredor.com</i></u>  password: <u><i> fredorinvestments</i></u></li>
+                  <li>Admin login Details <br /> email: <u><i> admin@fredor.com</i></u> <br /> password: <u><i> fredorinvestments</i></u></li>
                 </ol>
               </li>
             </div>
