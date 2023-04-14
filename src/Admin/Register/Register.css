@@ -41,3 +41,21 @@ text-decoration: none;
   .contheader{
     font-size: 24px;
   }
+  .modalcont1{
+    font-size: 14px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .modalcont2{
+    font-size: 20px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .underline{
+    width: 200px;
+    height: 4px;
+    background-color: #148b49;
+    margin-top: 1rem;
+}

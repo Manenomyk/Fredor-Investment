@@ -41,6 +41,15 @@ function MyVerticallyCenteredModal(props) {
           <div>
           <div className="contheader">
            Welcome to Fredor Investments
+           <div className="modalcont1">
+            Thank you for your interest to view us out
+           </div>
+           <div className="modalcont2">
+            <div>
+            Lets Walk through the System
+            <div className="underline mx-auto"></div>
+            </div>
+           </div>
           </div>
         </div>
           </register.Col>
