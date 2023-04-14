@@ -95,10 +95,11 @@ function MyVerticallyCenteredModal(props) {
             <div className="mb-2">
               <li>
                 <ol>
-                  <li>The system routes arent secured yet, You can manouver your way through</li>
+                  <li>The system routes aren't secured yet, So you can manouver your way through</li>
                   <li>By default the user/client password is the user ID number</li>
                   <li>The system is still in development stage and is not yet complete</li>
                   <li>The naming conventions ie CustomerList are as per the clients specifications</li>
+                  <li>Ensure to run the database seed command to access the admin credentials</li>
                   <li>Admin login Details <br /> email: <u><i> admin@fredor.com</i></u> <br /> password: <u><i> fredorinvestments</i></u></li>
                 </ol>
               </li>
