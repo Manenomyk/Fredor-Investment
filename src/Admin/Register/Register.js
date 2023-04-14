@@ -54,6 +54,19 @@ function MyVerticallyCenteredModal(props) {
         </div>
           </register.Col>
         </register.Row>
+        <hr />
+        <register.Row>
+          <register.Col lg={8} className="mx-auto">
+            <div className="mb-3">
+              <b><u><i>About Fredor Investment System</i></u></b>
+            </div>
+            <div className="mb-2">
+              FREDOR INVESTMENT is a transaction processing system 
+              for a Retail store called FREDOR INVESTMENT located in Voi Kenya.
+              It serves to manage the routine transactions of the business.
+            </div>
+          </register.Col>
+        </register.Row>
         
       </register.Modal.Body>
       <register.Modal.Footer>
