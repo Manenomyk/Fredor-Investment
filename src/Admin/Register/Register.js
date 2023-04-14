@@ -104,6 +104,14 @@ function MyVerticallyCenteredModal(props) {
             </div>
           </register.Col>
         </register.Row>
+        <hr />
+        <register.Row>
+          <register.Col lg={4} className="mx-auto">
+            <div>
+              
+            </div>
+          </register.Col>
+        </register.Row>
       </register.Modal.Body>
       <register.Modal.Footer>
         <div>
