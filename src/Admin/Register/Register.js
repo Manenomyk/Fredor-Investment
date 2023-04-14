@@ -65,6 +65,15 @@ function MyVerticallyCenteredModal(props) {
               for a Retail store called FREDOR INVESTMENT located in Voi Kenya.
               It serves to manage the routine transactions of the business.
             </div>
+            <div className="mb-3">
+              <b><u><i>How we work</i></u></b>
+            </div>
+            <div className="mb-2">
+              The system has Three views ie the Admin, Clerk and Authorizer. 
+              <u><i> Unfotunately you cant create an account</i></u> and thats why you are here.
+              That privilege is given to the admin to create the different users who 
+              later will just login and can change/update their profile details.
+            </div>
           </register.Col>
         </register.Row>
         
