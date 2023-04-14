@@ -76,7 +76,29 @@ function MyVerticallyCenteredModal(props) {
             </div>
           </register.Col>
         </register.Row>
-        
+        <hr />
+        <register.Row>
+          <register.Col lg={6} className="mx-auto">
+          <div className="mb-3">
+              <b><u><i>Roles</i></u></b>
+            </div>
+            <div className="mb-2">
+              Roles in this system are defined as per the requirements of the admin.
+              The different views have different roles all together as you will notice.
+              <i><u> I will provide the login details for the admin</u></i> for you 
+              to freely access the system.
+            </div>
+            <div className="mb-3">
+              <b><u><i>Things to note</i></u></b>
+            </div>
+            <div className="mb-2">
+              The system has Three views ie the Admin, Clerk and Authorizer. 
+              <u><i> Unfotunately you cant create an account</i></u> and thats why you are here.
+              That privilege is given to the admin to create the different users who 
+              later will just login and can change/update their profile details.
+            </div>
+          </register.Col>
+        </register.Row>
       </register.Modal.Body>
       <register.Modal.Footer>
         <div>
