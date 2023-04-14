@@ -66,10 +66,11 @@ function Login() {
               setSuccessResponse("");
             }, 2000);
 
-            
             navigate("/admindashboard");
-          } else {
-           
+          } else if (res.status === 401) {
+            alert("oops, invalid credentials");
+          }else {
+            alert("oops, Fields are required");
             navigate("/register");
           }
         })
@@ -87,18 +88,16 @@ function Login() {
       alert("Login failled");
       navigate("/register");
       setServerError("Invalid credentials.");
-      
+
       setTimeout(() => {
         setServerError("");
       }, 2000);
-
-      
     }
   };
 
   return (
     <div>
-       <div
+      <div
         style={{
           marginLeft: "45%",
           marginTop: "0%",
