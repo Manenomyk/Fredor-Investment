@@ -59,10 +59,12 @@ function Login() {
           console.log(res.data.errors);
 
           setLoading(false);
-          localStorage.setItem("auth_token", res.data.token);
-          localStorage.setItem("auth_name", JSON.stringify(res.data));
+
           if (res.data.status === 200) {
+            localStorage.setItem("auth_token", res.data.token);
+            localStorage.setItem("auth_name", JSON.stringify(res.data.username));
             setSuccessResponse("you have been Logged successfully.");
+
             setTimeout(() => {
               setSuccessResponse("");
             }, 2000);
@@ -74,10 +76,9 @@ function Login() {
             setTimeout(() => {
               setServerError("");
             }, 4000);
-          }else {
+          } else {
             setLoading(false);
             setlogin({ ...logininput, errorlist: res.data.errors });
-            
           }
         })
         .catch((res) => {
@@ -180,9 +181,8 @@ function Login() {
                       onChange={handleinput}
                       value={logininput.email}
                     />
-                    
-                        <span className="dede">{logininput.errorlist.email}</span>
-                     
+
+                    <span className="dede">{logininput.errorlist.email}</span>
                   </div>
                 </div>
                 <div className="input-div two">
@@ -200,7 +200,9 @@ function Login() {
                       onChange={handleinput}
                       value={logininput.password}
                     />
-                    <span className="dede">{logininput.errorlist.password}</span>
+                    <span className="dede">
+                      {logininput.errorlist.password}
+                    </span>
                   </div>
                 </div>
                 <a href="#">Forgot password?</a>
