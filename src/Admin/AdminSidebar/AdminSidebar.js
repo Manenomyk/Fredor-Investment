@@ -24,7 +24,7 @@ function AdminSidebar() {
         setLoading(true);
         try {
             axios.post(`/api/logout`) .then(res =>{
-                console.log(res);
+                console.log(res.data);
                 setLoading(false);
     
                 if (res.status === 200) {

@@ -68,8 +68,14 @@ function Login() {
             setTimeout(() => {
               setSuccessResponse("");
             }, 2000);
-
-            navigate("/admindashboard");
+            if (res.data.role === 'admin') {
+              navigate("/admindashboard");
+            }else if (res.data.role === 'autho') {
+              navigate("/authdashboard");
+            } else {
+              navigate("/Clerkdashboard");
+            }
+            
           } else if (res.data.status === 401) {
             setLoading(false);
             setServerError("Invalid credentials.");
