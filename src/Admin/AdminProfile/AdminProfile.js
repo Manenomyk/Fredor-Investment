@@ -52,7 +52,11 @@ function AdminProfile() {
     axios.put(`api/updateprofile/${id}`, data).then((res) => {
       console.log(res);
       if (res.data.status === 200) {
-        alert("profile updated successfully");
+        setSuccessResponse("Profile updated successfully.");
+
+            setTimeout(() => {
+              setSuccessResponse("");
+            }, 2000);
         seterrors([]);
       } else if (res.data.status === 422) {
         seterrors(res.data.validation_errors);
