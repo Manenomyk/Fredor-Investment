@@ -57,17 +57,17 @@ function AdminProfile() {
       if (res.data.status === 200) {
         setSuccessResponse("Profile updated successfully.");
 
-            setTimeout(() => {
-              setSuccessResponse("");
-            }, 2000);
+        setTimeout(() => {
+          setSuccessResponse("");
+        }, 4000);
         seterrors([]);
       } else if (res.data.status === 422) {
         seterrors(res.data.validation_errors);
       } else if (res.data.status === 404) {
         setServerError("Oooops, sorry profile update failed.");
-            setTimeout(() => {
-              setServerError("");
-            }, 4000);
+        setTimeout(() => {
+          setServerError("");
+        }, 4000);
       } else {
         alert("please contact admin");
       }
@@ -76,7 +76,7 @@ function AdminProfile() {
 
   return (
     <div>
-            <div
+      <div
         style={{
           marginLeft: "45%",
           marginTop: "0%",
@@ -231,7 +231,7 @@ function AdminProfile() {
                 <div>
                   {loading && (
                     <button
-                    onClick={adminupdate}
+                      onClick={adminupdate}
                       style={{
                         fontSize: "18px",
                         background: "transparent",
@@ -255,9 +255,7 @@ function AdminProfile() {
                             color="blue"
                             ariaLabel="loading"
                           />
-                          <span style={{ fontSize: "20px" }}>
-                            Updating...
-                          </span>
+                          <span style={{ fontSize: "20px" }}>Updating...</span>
                         </div>
                       </div>
                     </button>
@@ -265,14 +263,14 @@ function AdminProfile() {
 
                   {!loading && (
                     <div>
-                    <button
-                      onClick={adminupdate}
-                      className="btn btn-success"
-                      id="updatebtn"
-                    >
-                      Update
-                    </button>
-                  </div>
+                      <button
+                        onClick={adminupdate}
+                        className="btn btn-success"
+                        id="updatebtn"
+                      >
+                        Update
+                      </button>
+                    </div>
                   )}
                 </div>
                 <a href="" id="uplink">

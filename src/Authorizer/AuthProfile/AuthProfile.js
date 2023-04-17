@@ -16,6 +16,7 @@ function AuthProfile() {
   const [successResponse, setSuccessResponse] = useState("");
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errors, seterrors] = useState([]);
   const [authpro, setauthpro] = useState({
     name: "",
     email: "",
@@ -54,19 +55,80 @@ function AuthProfile() {
       location: authpro.location,
     };
 
-    try {
-      axios
-        .post(`api/authupdate`, data)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((res) => {
-          console.log(res);
-        });
-    } catch (error) {}
+    setLoading(true);
+    axios.put(`api/updateprofile/${id}`, data).then((res) => {
+      console.log(res);
+      setLoading(false);
+      if (res.data.status === 200) {
+        setSuccessResponse("Profile updated successfully.");
+
+            setTimeout(() => {
+              setSuccessResponse("");
+            }, 4000);
+        seterrors([]);
+      } else if (res.data.status === 422) {
+        seterrors(res.data.validation_errors);
+      } else if (res.data.status === 404) {
+        setServerError("Oooops, sorry profile update failed.");
+            setTimeout(() => {
+              setServerError("");
+            }, 4000);
+      } else {
+        alert("please contact admin");
+      }
+    });
   };
   return (
     <div>
+           <div
+        style={{
+          marginLeft: "45%",
+          marginTop: "0%",
+          position: "fixed",
+          zIndex: "2",
+        }}
+      >
+        {successResponse && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#28a745",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {successResponse}
+          </div>
+        )}
+        {serverError && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#ED4337",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {serverError}
+          </div>
+        )}
+      </div>
       <div>
         {!isOpen ? (
           <div
