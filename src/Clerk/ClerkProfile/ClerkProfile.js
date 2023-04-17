@@ -5,6 +5,7 @@ import { IoMdContact } from "react-icons/io";
 import axios from "axios";
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
+import { Oval } from "react-loader-spinner";
 
 const id = localStorage.getItem("userID");
 function ClerkProfile() {
