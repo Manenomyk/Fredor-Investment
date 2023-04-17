@@ -11,7 +11,7 @@ import { IoIosArrowDropleft } from "react-icons/io";
 const id = localStorage.getItem('userID');
 function AdminProfile() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [errors, seterrors] = useState([]);
  
   
   const [adminpro, setadminpro] = useState({
@@ -53,10 +53,10 @@ const adminupdate = (e) =>{
 
     axios.put(`api/updateprofile/${id}`, data).then((res)=>{
       console.log(res);
-      if (condition) {
+      if (res.data.status === 200) {
         
-      }else{
-        
+      }else if(res.data.status === 422){
+        seterrors(res.data.validation_errors)
       }
     })
     
