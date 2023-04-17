@@ -232,6 +232,8 @@ function AdminProfile() {
                   {loading && (
                     <button
                       onClick={adminupdate}
+                      className="btn btn-success"
+                        id="updatebtn"
                       style={{
                         fontSize: "18px",
                         background: "transparent",

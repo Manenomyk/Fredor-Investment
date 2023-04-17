@@ -225,13 +225,51 @@ function AuthProfile() {
                 </div>
 
                 <div>
-                  <button
+                  {loading && (
+                    <button
                     onClick={authupdate}
                     className="btn btn-danger"
-                    id="updatebtn"
-                  >
-                    Update
-                  </button>
+                      id="updatebtn"
+                      style={{
+                        fontSize: "18px",
+                        background: "transparent",
+                        color: "black",
+                        border: "none",
+                        marginLeft: "28px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          placeItems: "center",
+                          display: "grid",
+                          top: "50%",
+                          transform: "translate Y(50%)",
+                        }}
+                      >
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <Oval
+                            height="20"
+                            width="20"
+                            color="blue"
+                            ariaLabel="loading"
+                          />
+                          <span style={{ fontSize: "20px" }}>Updating...</span>
+                        </div>
+                      </div>
+                    </button>
+                  )}
+
+                  {!loading && (
+                    <div>
+                    <button
+                      onClick={authupdate}
+                      className="btn btn-danger"
+                      id="updatebtn"
+                    >
+                      Update
+                    </button>
+                  </div>
+                  )}
                 </div>
                 <a href="" id="uplink">
                   Update password?
