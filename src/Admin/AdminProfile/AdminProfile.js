@@ -13,6 +13,7 @@ function AdminProfile() {
   const [serverError, setServerError] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [errors, seterrors] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const [adminpro, setadminpro] = useState({
     name: "",
@@ -48,9 +49,10 @@ function AdminProfile() {
       id_number: adminpro.id_number,
       location: adminpro.location,
     };
-
+    setLoading(true);
     axios.put(`api/updateprofile/${id}`, data).then((res) => {
       console.log(res);
+      setLoading(false);
       if (res.data.status === 200) {
         setSuccessResponse("Profile updated successfully.");
 
@@ -61,7 +63,10 @@ function AdminProfile() {
       } else if (res.data.status === 422) {
         seterrors(res.data.validation_errors);
       } else if (res.data.status === 404) {
-        alert("Ooops, User id not found");
+        setServerError("Oooops, sorry profile update failed.");
+            setTimeout(() => {
+              setServerError("");
+            }, 4000);
       } else {
         alert("please contact admin");
       }
