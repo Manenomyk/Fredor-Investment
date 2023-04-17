@@ -49,16 +49,28 @@ function ClerkProfile() {
       location: Clerkprof.location,
     };
 
-    try {
-      axios
-        .post(`api/clerkprofile`, data)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((res) => {
-          console.log(res);
-        });
-    } catch (error) {}
+    setLoading(true);
+    axios.put(`api/updateprofile/${id}`, data).then((res) => {
+      console.log(res);
+      setLoading(false);
+      if (res.data.status === 200) {
+        setSuccessResponse("Profile updated successfully.");
+
+            setTimeout(() => {
+              setSuccessResponse("");
+            }, 4000);
+        seterrors([]);
+      } else if (res.data.status === 422) {
+        seterrors(res.data.validation_errors);
+      } else if (res.data.status === 404) {
+        setServerError("Oooops, sorry profile update failed.");
+            setTimeout(() => {
+              setServerError("");
+            }, 4000);
+      } else {
+        alert("please contact admin");
+      }
+    });
   };
   return (
     <div>
