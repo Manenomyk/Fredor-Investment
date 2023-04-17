@@ -51,17 +51,16 @@ const adminupdate = (e) =>{
     location: adminpro.location,
   };
 
-  try {
-    axios.put(`api/adminprofile`, data).then((res)=>{
+    axios.put(`api/updateprofile/${id}`, data).then((res)=>{
       console.log(res);
+      if (condition) {
+        
+      }else{
+        
+      }
     })
-    .catch((res)=>{
-      console.log(res);
-    });
     
-  } catch (error) {
-    alert('oops, update failed');
-  }
+ 
 }
 
   return (
