@@ -9,6 +9,10 @@ import { IoIosArrowDropleft } from "react-icons/io";
 const id = localStorage.getItem("userID");
 function ClerkProfile() {
   const [isOpen, setIsOpen] = useState(false);
+  const [successResponse, setSuccessResponse] = useState("");
+  const [serverError, setServerError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errors, seterrors] = useState([]);
   const [Clerkprof, setclerkprof] = useState({
     name: "",
     email: "",
@@ -153,15 +157,6 @@ function ClerkProfile() {
                   />
                 </div>
 
-                <div>
-                  <button
-                    onClick={clerkupdate}
-                    className="btn btn-success"
-                    id="updatebtn"
-                  >
-                    Update
-                  </button>
-                </div>
                 <div>
                   {loading && (
                     <button
