@@ -7,6 +7,10 @@ import axios from "axios";
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 
+
+
+const id = localStorage.getItem('userID');
+
 function AuthProfile() {
   const [isOpen, setIsOpen] = useState(false);
   const [authpro, setauthpro] = useState({
@@ -29,7 +33,7 @@ function AuthProfile() {
     }
    });
   }, []);
-  
+
   const handleinput = (e) => {
     e.persist();
 
