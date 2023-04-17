@@ -6,13 +6,16 @@ import * as authprof from "react-bootstrap";
 import axios from "axios";
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
-
+import { Oval } from "react-loader-spinner";
 
 
 const id = localStorage.getItem('userID');
 
 function AuthProfile() {
   const [isOpen, setIsOpen] = useState(false);
+  const [successResponse, setSuccessResponse] = useState("");
+  const [serverError, setServerError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [authpro, setauthpro] = useState({
     name: "",
     email: "",
