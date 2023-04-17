@@ -9,6 +9,8 @@ import { IoIosArrowDropleft } from "react-icons/io";
 
 const id = localStorage.getItem("userID");
 function AdminProfile() {
+  const [successResponse, setSuccessResponse] = useState("");
+  const [serverError, setServerError] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [errors, seterrors] = useState([]);
 
@@ -64,6 +66,55 @@ function AdminProfile() {
 
   return (
     <div>
+            <div
+        style={{
+          marginLeft: "45%",
+          marginTop: "0%",
+          position: "fixed",
+          zIndex: "2",
+        }}
+      >
+        {successResponse && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#28a745",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {successResponse}
+          </div>
+        )}
+        {serverError && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#ED4337",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {serverError}
+          </div>
+        )}
+      </div>
       <div>
         {!isOpen ? (
           <div
