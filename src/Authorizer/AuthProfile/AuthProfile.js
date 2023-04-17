@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import AuthSidebar from "../AuthSidebar/AuthSidebar";
 import { IoMdContact } from "react-icons/io";
 import "./AuthProfile.css";
@@ -8,8 +8,7 @@ import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { Oval } from "react-loader-spinner";
 
-
-const id = localStorage.getItem('userID');
+const id = localStorage.getItem("userID");
 
 function AuthProfile() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +26,14 @@ function AuthProfile() {
 
   useEffect(() => {
     // const userid=props.match.params.id;
-   axios.get(`/api/view_profile/${id}`).then(res=>{
-    console.log(res);
-    if (res.data.status === 200) {
-      setauthpro(res.data.profile)
-    }
-    else if (res.data.status === 404) {
-      alert('not a user');
-    }
-   });
+    axios.get(`/api/view_profile/${id}`).then((res) => {
+      console.log(res);
+      if (res.data.status === 200) {
+        setauthpro(res.data.profile);
+      } else if (res.data.status === 404) {
+        alert("not a user");
+      }
+    });
   }, []);
 
   const handleinput = (e) => {
@@ -62,17 +60,17 @@ function AuthProfile() {
       if (res.data.status === 200) {
         setSuccessResponse("Profile updated successfully.");
 
-            setTimeout(() => {
-              setSuccessResponse("");
-            }, 4000);
+        setTimeout(() => {
+          setSuccessResponse("");
+        }, 4000);
         seterrors([]);
       } else if (res.data.status === 422) {
         seterrors(res.data.validation_errors);
       } else if (res.data.status === 404) {
         setServerError("Oooops, sorry profile update failed.");
-            setTimeout(() => {
-              setServerError("");
-            }, 4000);
+        setTimeout(() => {
+          setServerError("");
+        }, 4000);
       } else {
         alert("please contact admin");
       }
@@ -80,7 +78,7 @@ function AuthProfile() {
   };
   return (
     <div>
-           <div
+      <div
         style={{
           marginLeft: "45%",
           marginTop: "0%",
@@ -154,7 +152,7 @@ function AuthProfile() {
                 cursor: "pointer",
               }}
             />
-           <AuthSidebar />
+            <AuthSidebar />
           </div>
         )}
       </div>
@@ -227,8 +225,8 @@ function AuthProfile() {
                 <div>
                   {loading && (
                     <button
-                    onClick={authupdate}
-                    className="btn btn-danger"
+                      onClick={authupdate}
+                      className="btn btn-danger"
                       id="updatebtn"
                       style={{
                         fontSize: "18px",
@@ -261,14 +259,14 @@ function AuthProfile() {
 
                   {!loading && (
                     <div>
-                    <button
-                      onClick={authupdate}
-                      className="btn btn-danger"
-                      id="updatebtn"
-                    >
-                      Update
-                    </button>
-                  </div>
+                      <button
+                        onClick={authupdate}
+                        className="btn btn-danger"
+                        id="updatebtn"
+                      >
+                        Update
+                      </button>
+                    </div>
                   )}
                 </div>
                 <a href="" id="uplink">

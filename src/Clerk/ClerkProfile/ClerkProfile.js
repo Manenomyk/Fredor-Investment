@@ -75,6 +75,56 @@ function ClerkProfile() {
   };
   return (
     <div>
+      <div
+        style={{
+          marginLeft: "45%",
+          marginTop: "0%",
+          position: "fixed",
+          zIndex: "2",
+        }}
+      >
+        {successResponse && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#28a745",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {successResponse}
+          </div>
+        )}
+        {serverError && (
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              width: "120%",
+              right: "0",
+              background: "#ED4337",
+              borderRadius: "15px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              paddingLeft: "6%",
+              border: "1px solid lightgray",
+              opacity: "0.7",
+              transition: "0.5",
+            }}
+          >
+            {serverError}
+          </div>
+        )}
+      </div>
+
       <div>
         {!isOpen ? (
           <div
@@ -134,7 +184,7 @@ function ClerkProfile() {
                   <input
                     name="email"
                     onChange={handleinput}
-                    value={Clerkprof.name}
+                    value={Clerkprof.email}
                     className="form-control shadow-none profinput"
                     type="text"
                   />
@@ -144,7 +194,7 @@ function ClerkProfile() {
                   <input
                     name="phone_number"
                     onChange={handleinput}
-                    value={Clerkprof.name}
+                    value={Clerkprof.phone_number}
                     className="form-control shadow-none profinput"
                     type="text"
                   />
@@ -154,7 +204,7 @@ function ClerkProfile() {
                   <input
                     name="id_number"
                     onChange={handleinput}
-                    value={Clerkprof.name}
+                    value={Clerkprof.id_number}
                     className="form-control shadow-none profinput"
                     type="text"
                   />
@@ -164,7 +214,7 @@ function ClerkProfile() {
                   <input
                     name="location"
                     onChange={handleinput}
-                    value={Clerkprof.name}
+                    value={Clerkprof.location}
                     className="form-control shadow-none profinput"
                     type="text"
                   />
