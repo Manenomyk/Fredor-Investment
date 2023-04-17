@@ -6,6 +6,8 @@ import axios from 'axios';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 
+
+const id = localStorage.getItem('userID');
 function ClerkProfile() {
   const [isOpen, setIsOpen] = useState(false);
   const [Clerkprof, setclerkprof] = useState({
