@@ -18,6 +18,19 @@ function ClerkProfile() {
     location:'',
   });
 
+  useEffect(() => {
+   axios.get(`/api/view_profile/${id}`).then(res=>{
+    console.log(res);
+    if (res.data.status === 200) {
+      setadminpro(res.data.profile)
+    }
+    else if (res.data.status === 404) {
+      alert('not a user');
+    }
+   });
+  }, []);
+
+  
   const handleinput =(e)=>{
     e.persist();
 
