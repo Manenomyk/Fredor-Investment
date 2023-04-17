@@ -7,6 +7,8 @@ import axios from 'axios';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 
+
+const user = JSON.parse(localStorage.getItem('userID'));
 function AdminProfile() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +24,7 @@ function AdminProfile() {
   });
   useEffect(() => {
     // const userid=props.match.params.id;
-   axios.get(`/api/view_profile/${id}`).then(res=>{
+   axios.get(`/api/view_profile/${user}`).then(res=>{
     if (res.data.status === 200) {
       setadminpro(res.data.profile)
     }
