@@ -5,6 +5,7 @@ import { IoMdContact } from "react-icons/io";
 import "./AdminProfile.css";
 import axios from "axios";
 import { FaBars } from "react-icons/fa";
+import { Oval } from "react-loader-spinner";
 import { IoIosArrowDropleft } from "react-icons/io";
 
 const id = localStorage.getItem("userID");
@@ -228,13 +229,51 @@ function AdminProfile() {
                 <small className="text-danger">{errors.location}</small>
 
                 <div>
-                  <button
+                  {loading && (
+                    <button
                     onClick={adminupdate}
-                    className="btn btn-success"
-                    id="updatebtn"
-                  >
-                    Update
-                  </button>
+                      style={{
+                        fontSize: "18px",
+                        background: "transparent",
+                        color: "black",
+                        border: "none",
+                        marginLeft: "28px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          placeItems: "center",
+                          display: "grid",
+                          top: "50%",
+                          transform: "translate Y(50%)",
+                        }}
+                      >
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <Oval
+                            height="20"
+                            width="20"
+                            color="blue"
+                            ariaLabel="loading"
+                          />
+                          <span style={{ fontSize: "20px" }}>
+                            Updating...
+                          </span>
+                        </div>
+                      </div>
+                    </button>
+                  )}
+
+                  {!loading && (
+                    <div>
+                    <button
+                      onClick={adminupdate}
+                      className="btn btn-success"
+                      id="updatebtn"
+                    >
+                      Update
+                    </button>
+                  </div>
+                  )}
                 </div>
                 <a href="" id="uplink">
                   Update password?
