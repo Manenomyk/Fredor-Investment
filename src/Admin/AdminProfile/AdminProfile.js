@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import * as adminprof from 'react-bootstrap';
 import { IoMdContact } from "react-icons/io";
@@ -9,6 +9,9 @@ import { IoIosArrowDropleft } from "react-icons/io";
 
 function AdminProfile() {
   const [isOpen, setIsOpen] = useState(false);
+
+ 
+  
   const [adminpro, setadminpro] = useState({
     name : "",
     email: "",
@@ -17,6 +20,18 @@ function AdminProfile() {
     location: "",
 
   });
+  useEffect(() => {
+    // const userid=props.match.params.id;
+   axios.get(`/api/view_profile/${id}`).then(res=>{
+    if (res.data.status === 200) {
+      setadminpro(res.data.profile)
+    }
+    else if (res.data.status === 404) {
+      alert('not a user');
+    }
+   });
+  }, []);
+
 const handleinput = (e)=>{
   e.persist();
   setadminpro({...adminpro, [e.target.name]: e.target.value});
@@ -34,7 +49,7 @@ const adminupdate = (e) =>{
   };
 
   try {
-    axios.post(`api/adminprofile`, data).then((res)=>{
+    axios.put(`api/adminprofile`, data).then((res)=>{
       console.log(res);
     })
     .catch((res)=>{
