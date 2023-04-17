@@ -66,7 +66,7 @@ function Login() {
           if (res.data.status === 200) {
             localStorage.setItem("auth_token", res.data.token);
             localStorage.setItem("auth_name", JSON.stringify(res.data.username));
-            localStorage.setItem("userID", JSON.stringify(res.data.id));
+            localStorage.setItem("userID", JSON.stringify(res.data.userID));
             setSuccessResponse("you have been Logged successfully.");
 
             setTimeout(() => {

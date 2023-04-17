@@ -14,7 +14,7 @@ function AdminUsers() {
 
   useEffect(() => {
    axios.get(`api/adminViewUsers`).then(res=>{
-    console.log(res.data.viewusers);
+    console.log(res);
     if(res.status === 200)
     {
       setusers(res.data.viewusers)
