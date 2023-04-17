@@ -1,46 +1,43 @@
-import React, {useState, useEffect} from 'react';
-import ClerkSidebar from '../ClerkSidebar/ClerkSidebar';
-import * as clerkpro from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import ClerkSidebar from "../ClerkSidebar/ClerkSidebar";
+import * as clerkpro from "react-bootstrap";
 import { IoMdContact } from "react-icons/io";
-import axios from 'axios';
+import axios from "axios";
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 
-
-const id = localStorage.getItem('userID');
+const id = localStorage.getItem("userID");
 function ClerkProfile() {
   const [isOpen, setIsOpen] = useState(false);
   const [Clerkprof, setclerkprof] = useState({
-    name:'',
-    email:'',
-    phone_number:'',
-    id_number:'',
-    location:'',
+    name: "",
+    email: "",
+    phone_number: "",
+    id_number: "",
+    location: "",
   });
 
   useEffect(() => {
-   axios.get(`/api/view_profile/${id}`).then(res=>{
-    console.log(res);
-    if (res.data.status === 200) {
-      setclerkprof(res.data.profile)
-    }
-    else if (res.data.status === 404) {
-      alert('not a user');
-    }
-   });
+    axios.get(`/api/view_profile/${id}`).then((res) => {
+      console.log(res);
+      if (res.data.status === 200) {
+        setclerkprof(res.data.profile);
+      } else if (res.data.status === 404) {
+        alert("not a user");
+      }
+    });
   }, []);
 
-  
-  const handleinput =(e)=>{
+  const handleinput = (e) => {
     e.persist();
 
-    setclerkprof({...Clerkprof, [e.target.name]: e.target.value})
+    setclerkprof({ ...Clerkprof, [e.target.name]: e.target.value });
   };
 
-  const clerkupdate =(e)=>{
+  const clerkupdate = (e) => {
     e.preventDefault();
 
-    const data={
+    const data = {
       name: Clerkprof.name,
       email: Clerkprof.email,
       phone_number: Clerkprof.phone_number,
@@ -49,19 +46,19 @@ function ClerkProfile() {
     };
 
     try {
-      axios.post(`api/clerkprofile`, data).then((res)=>{
-        console.log(res);
-      }).catch((res)=>{
-        console.log(res);
-      })
-      
-    } catch (error) {
-      
-    }
-  }
+      axios
+        .post(`api/clerkprofile`, data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((res) => {
+          console.log(res);
+        });
+    } catch (error) {}
+  };
   return (
     <div>
-       <div>
+      <div>
         {!isOpen ? (
           <div
             style={{
@@ -91,61 +88,138 @@ function ClerkProfile() {
         )}
       </div>
 
-
-
-
       <clerkpro.Container>
-              <clerkpro.Row>
-                <clerkpro.Col className='mx-auto' lg={7}>
-                  <clerkpro.Card className='profi'>
-                    <clerkpro.Card.Title>
-                      
-                        <div className='edit'>Edit profile</div>
-                        <div className='profiicon'>
-                          
-                        <div ><IoMdContact/></div>
-                        
-                      </div>
-                    </clerkpro.Card.Title>
-                    <clerkpro.Card.Body className='mx-auto'>
-                      <div>
-                        <div>Name</div>
-                        <input name='name' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
-                      </div>
-                      
-                      <div>
-                        <div>Email adress</div>
-                        <input name='email'onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
-                      </div>
-                      <div>
-                        <div>Phone number</div>
-                        <input name='phone_number' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
-                      </div>
-                      <div>
-                        <div>Id Number</div>
-                        <input name='id_number' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
-                      </div>
-                      <div>
-                        <div>Location</div>
-                        <input  name='location' onChange={handleinput} value={Clerkprof.name} className='form-control shadow-none profinput' type="text" />
-                      </div>
-                    
-                  
-                      
+        <clerkpro.Row>
+          <clerkpro.Col className="mx-auto" lg={7}>
+            <clerkpro.Card className="profi">
+              <clerkpro.Card.Title>
+                <div className="edit">Edit profile</div>
+                <div className="profiicon">
+                  <div>
+                    <IoMdContact />
+                  </div>
+                </div>
+              </clerkpro.Card.Title>
+              <clerkpro.Card.Body className="mx-auto">
+                <div>
+                  <div>Name</div>
+                  <input
+                    name="name"
+                    onChange={handleinput}
+                    value={Clerkprof.name}
+                    className="form-control shadow-none profinput"
+                    type="text"
+                  />
+                </div>
 
-                      <div>
-                          <button onClick={clerkupdate} className='btn btn-success' id='updatebtn'>Update</button>
-                                  
-                      </div>
-                      <a href="" id='uplink'>Update password?</a>
+                <div>
+                  <div>Email adress</div>
+                  <input
+                    name="email"
+                    onChange={handleinput}
+                    value={Clerkprof.name}
+                    className="form-control shadow-none profinput"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <div>Phone number</div>
+                  <input
+                    name="phone_number"
+                    onChange={handleinput}
+                    value={Clerkprof.name}
+                    className="form-control shadow-none profinput"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <div>Id Number</div>
+                  <input
+                    name="id_number"
+                    onChange={handleinput}
+                    value={Clerkprof.name}
+                    className="form-control shadow-none profinput"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <div>Location</div>
+                  <input
+                    name="location"
+                    onChange={handleinput}
+                    value={Clerkprof.name}
+                    className="form-control shadow-none profinput"
+                    type="text"
+                  />
+                </div>
 
-                    </clerkpro.Card.Body>
-                  </clerkpro.Card>
-                </clerkpro.Col>
-              </clerkpro.Row>
-            </clerkpro.Container>
+                <div>
+                  <button
+                    onClick={clerkupdate}
+                    className="btn btn-success"
+                    id="updatebtn"
+                  >
+                    Update
+                  </button>
+                </div>
+                <div>
+                  {loading && (
+                    <button
+                    onClick={clerkupdate}
+                      className="btn btn-success"
+                        id="updatebtn"
+                      style={{
+                        fontSize: "18px",
+                        background: "transparent",
+                        color: "black",
+                        border: "none",
+                        marginLeft: "28px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          placeItems: "center",
+                          display: "grid",
+                          top: "50%",
+                          transform: "translate Y(50%)",
+                        }}
+                      >
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <Oval
+                            height="20"
+                            width="20"
+                            color="blue"
+                            ariaLabel="loading"
+                          />
+                          <span style={{ fontSize: "20px" }}>Updating...</span>
+                        </div>
+                      </div>
+                    </button>
+                  )}
+
+                  {!loading && (
+                    <div>
+                      <button
+                        onClick={clerkupdate}
+                        className="btn btn-success"
+                        id="updatebtn"
+                      >
+                        Update
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <a href="" id="uplink">
+                  Update password?
+                </a>
+              </clerkpro.Card.Body>
+            </clerkpro.Card>
+          </clerkpro.Col>
+        </clerkpro.Row>
+      </clerkpro.Container>
     </div>
-  )
+  );
 }
 
-export default ClerkProfile
+export default ClerkProfile;
