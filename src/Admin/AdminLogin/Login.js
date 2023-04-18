@@ -67,6 +67,7 @@ function Login() {
             localStorage.setItem("auth_token", res.data.token);
             localStorage.setItem("auth_name", JSON.stringify(res.data.username));
             localStorage.setItem("userID", JSON.stringify(res.data.userID));
+            localStorage.setItem("role", JSON.stringify(res.data.role));
             setSuccessResponse("you have been Logged successfully.");
 
             setTimeout(() => {
