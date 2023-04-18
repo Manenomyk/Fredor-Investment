@@ -27,7 +27,8 @@ function ClerkSidebar() {
           if (res.status === 200) {
             localStorage.removeItem("auth_token");
             localStorage.removeItem("auth_name", JSON.stringify(res.data.user));
-
+            localStorage.removeItem("userID", JSON.stringify(res.data.userID));
+            
             setSuccessResponse("you have been registered successfully.");
             setTimeout(() => {
               setSuccessResponse("");
