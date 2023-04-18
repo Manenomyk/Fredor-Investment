@@ -11,6 +11,7 @@ import { Oval } from "react-loader-spinner";
 
 
 
+const userRole = localStorage.getItem("role");
 
 function Login() {
   const inputs = document.querySelectorAll(".input");
@@ -59,7 +60,7 @@ function Login() {
       axios
         .post(`/api/login`, data)
         .then((res) => {
-          console.log(res.data.errors);
+          console.log(res.data);
 
           setLoading(false);
 
@@ -67,18 +68,17 @@ function Login() {
             localStorage.setItem("auth_token", res.data.token);
             localStorage.setItem("auth_name", JSON.stringify(res.data.username));
             localStorage.setItem("userID", JSON.stringify(res.data.userID));
-            localStorage.setItem("role", JSON.stringify(res.data.role));
             setSuccessResponse("you have been Logged successfully.");
 
             setTimeout(() => {
               setSuccessResponse("");
             }, 2000);
-            if (res.data.role === 'admin') {
-              navigate("/admindashboard");
-            }else if (res.data.role === 'autho') {
+            if (res.data.role === '1') {
+              navigate("/Clerkdashboard");
+            }else if (res.data.role === '2') {
               navigate("/authdashboard");
             } else {
-              navigate("/Clerkdashboard");
+              navigate("/admindashboard");
             }
             
           } else if (res.data.status === 401) {
